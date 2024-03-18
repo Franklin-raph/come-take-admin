@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CustomerDropDown from '../../components/customer-drop-down/CustomerDropDown'
 
 const Customers = () => {
 
-  const filterArray = ['All', 'Inactive', 'Active']
+  const filterArray = ['All', 'Inactive', 'Active', 'Premium']
+  const [showCustomerDropDown, setShowCustomerDropDown] = useState(false)
 
   return (
     <div className='shadow bg-white rounded-[20px] p-[30px] h-[100%]'>
@@ -23,9 +25,9 @@ const Customers = () => {
 
       <div class="relative overflow-x-auto sm:rounded-lg mt-9">
           <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead class="text-xs text-[#5C5C5C] capitalize border-b">
+              <thead class="text-[14px] text-[#5C5C5C] capitalize border-b">
                   <tr>
-                      <th scope="col" class="px-6 py-3">
+                      <th scope="col" class="pl-3 pr-6 py-3">
                           Customers
                       </th>
                       <th scope="col" class="px-6 py-3">
@@ -43,8 +45,8 @@ const Customers = () => {
                   </tr>
               </thead>
               <tbody>
-                  <tr class="bg-white border-b">
-                      <td class="px-6 py-4">
+                  <tr class="bg-white border-b ">
+                      <td class="pl-3 pr-6 py-4">
                           Microsoft Surface Pro
                       </td>
                       <td class="px-6 py-4">
@@ -59,6 +61,15 @@ const Customers = () => {
                       <td class="px-6 py-4">
                           $2999
                       </td>
+                      <td class="px-1 py-4 cursor-pointer" onClick={() => setShowCustomerDropDown(!showCustomerDropDown)}>
+                        :
+                      </td>
+                      {
+                        showCustomerDropDown &&
+                        <div className='absolute top-[50px] right-[15px]'>
+                          <CustomerDropDown />
+                        </div>
+                      }
                   </tr>
               </tbody>
           </table>
