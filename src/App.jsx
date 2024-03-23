@@ -18,6 +18,7 @@ function App() {
         {admin && <SideNav />}
         <div className={admin ? `w-[80%] bg-[#f6f6f6] pt-[6rem] ml-auto px-[3rem] h-[100dvh]` : 'w-[100%]'}>
           <Routes>
+            <Route path='/' element={<Customers baseUrl={baseUrl}/>}/>
             <Route path='/customers' element={<Customers baseUrl={baseUrl}/>}/>
             <Route path='/admin-login' element={<AdminLogin baseUrl={baseUrl}/>}/>
             <Route path='/settings' element={<Settings baseUrl={baseUrl}/>}/>

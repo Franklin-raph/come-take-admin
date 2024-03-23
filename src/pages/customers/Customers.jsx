@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import CustomerDropDown from '../../components/customer-drop-down/CustomerDropDown'
+import { useNavigate } from 'react-router-dom'
 
 const Customers = ({baseUrl}) => {
 
   const filterArray = ['All', 'Inactive', 'Active', 'Premium']
   const [showCustomerDropDown, setShowCustomerDropDown] = useState(false)
   const admin = JSON.parse(localStorage.getItem('admin'))
+  const navigate = useNavigate()
 
   async function getAllCustomers(){
     const res = await fetch(`${baseUrl}/dashboard/all-customers`,{
@@ -18,6 +20,9 @@ const Customers = ({baseUrl}) => {
   }
 
   useEffect(() =>{
+    if(!admin){
+      navigate('/admin-login')
+    }
     getAllCustomers()
   },[])
 
