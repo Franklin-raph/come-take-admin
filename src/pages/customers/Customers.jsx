@@ -1,10 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomerDropDown from '../../components/customer-drop-down/CustomerDropDown'
 
-const Customers = () => {
+const Customers = ({baseUrl}) => {
 
   const filterArray = ['All', 'Inactive', 'Active', 'Premium']
   const [showCustomerDropDown, setShowCustomerDropDown] = useState(false)
+  const admin = JSON.parse(localStorage.getItem('admin'))
+
+  async function getAllCustomers(){
+    const res = await fetch(`${baseUrl}/dashboard/all-customers`,{
+      // headers:{
+      //   Authorization:``
+      // }
+    })
+    const data = await res.json()
+    console.log(res, data);
+  }
+
+  useEffect(() =>{
+    getAllCustomers()
+  },[])
 
   return (
     <div className='shadow bg-white rounded-[20px] p-[30px] h-[100%]'>
