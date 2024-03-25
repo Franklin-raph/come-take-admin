@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const SingleCustomer = ({baseUrl}) => {
     const { id } = useParams()
+    const [customerDetails, setCustomerDetails] = useState()
+    const [verifyCustomerModel, setVerifyCustomerModel] = useState(false)
+    const admin = JSON.parse(localStorage.getItem('admin'))
 
     console.log(id);
     // https://cometake.pythonanywhere.com/administrator/dashboard/customer/{user_id}
@@ -13,8 +16,11 @@ const SingleCustomer = ({baseUrl}) => {
             }
         })
         const data = await res.json()
+        setCustomerDetails(data.data)
         console.log(res, data);
     }
+
+
 
     useEffect(() => {
         getSingleCustomer()
@@ -22,6 +28,9 @@ const SingleCustomer = ({baseUrl}) => {
 
   return (
     <div>
+        {
+            verifyCustomerModel
+        }
         <div>
             <p>Customer's Details</p>
             <div className='flex gap-[20px]'>
@@ -30,7 +39,7 @@ const SingleCustomer = ({baseUrl}) => {
                     <div>
                         <div>
                             <p className='text-[#5C5C5C]'>Full Name</p>
-                            <p className='text-[#5C5C5C] font-[500]'>Emeka Ugwu</p>
+                            <p className='text-[#5C5C5C] font-[500]'>{customerDetails && customerDetails.first_name} {customerDetails && customerDetails.last_name}</p>
                         </div>
                         <div className='my-8'>
                             <p className='text-[#5C5C5C]'>Gender</p>
@@ -39,6 +48,13 @@ const SingleCustomer = ({baseUrl}) => {
                         <div>
                             <p className='text-[#5C5C5C]'>Last Seen</p>
                             <p className='text-[#5C5C5C] font-[500]'>Emeka Ugwu</p>
+                        </div>
+                        <div className='mt-8'>
+                            <p className='text-[#5C5C5C]'>Is Seller</p>
+                            <div className='flex items-center gap-3'>
+                                <p className='text-[#5C5C5C] font-[500] capitalize'>{customerDetails && customerDetails.kyc_status}</p>
+                                <button className='border py-[2px] mt-1 w-full text-[#5C5C5C] px-4 rounded-md' onClick={() => setVerifyCustomerModel(true)}>Verify</button>
+                            </div>
                         </div>
                     </div>
                     <div>

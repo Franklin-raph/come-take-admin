@@ -61,6 +61,9 @@ const Customers = ({baseUrl}) => {
                           Last Visited
                       </th>
                       <th scope="col" class="px-6 py-3">
+                          Is Seller
+                      </th>
+                      <th scope="col" class="px-6 py-3">
                           Email
                       </th>
                       <th scope="col" class="px-6 py-3">
@@ -81,6 +84,9 @@ const Customers = ({baseUrl}) => {
                         </td>
                         <td class="px-6 py-4">
                           {new Date(customer.last_seen).toDateString()}
+                        </td>
+                        <td class="px-6 py-4 capitalize">
+                          {customer.kyc_status}
                         </td>
                         <td class="px-6 py-4">
                           {customer.email}
