@@ -11,12 +11,13 @@ const SideNav = () => {
   const navigate = useNavigate()
 
   async function signOutAdmin(){
+    localStorage.clear()
     navigate('/admin-login')
-    location.reload()
+    window.location.reload()
   }
 
   return (
-    <div className='bg-[#003C2F] w-[20%] h-[100dvh] fixed'>
+    <div className='bg-[#003C2F] w-[15%] h-[100dvh] fixed'>
       <h1 className='text-white text-[32px] text-center font-[700] my-5'>Admin</h1>
       <ul className='text-white'>
         <li className='bg-secondary-color py-3 pl-3'>

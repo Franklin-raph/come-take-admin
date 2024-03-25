@@ -8,14 +8,18 @@ const Customers = ({baseUrl}) => {
   const [showCustomerDropDown, setShowCustomerDropDown] = useState(false)
   const admin = JSON.parse(localStorage.getItem('admin'))
   const navigate = useNavigate()
+  const [allCustomers, setAllCustomers] = useState([])
 
   async function getAllCustomers(){
     const res = await fetch(`${baseUrl}/dashboard/all-customers`,{
-      // headers:{
-      //   Authorization:``
-      // }
+      headers:{
+        Authorization:`Bearer ${admin.data[0].access}`
+      }
     })
     const data = await res.json()
+    if(res.ok){
+      setAllCustomers(data.data)
+    }
     console.log(res, data);
   }
 
@@ -27,7 +31,7 @@ const Customers = ({baseUrl}) => {
   },[])
 
   return (
-    <div className='shadow bg-white rounded-[20px] p-[30px] h-[100%]'>
+    <div className='shadow bg-white rounded-[20px] p-[30px]'>
       <p className='text-[#333333] text-[20px] font-[700]'>Customers <span className='text-[#A1A1A1] font-[400]'>(245)</span> </p>
       <div className='rounded-[8px] border-2 border-[#DCDCDC] p-[30px] mt-3'>
         <div className='flex items-center gap-[12px]'>
@@ -65,32 +69,38 @@ const Customers = ({baseUrl}) => {
                   </tr>
               </thead>
               <tbody>
-                  <tr class="bg-white border-b ">
-                      <td class="pl-3 pr-6 py-4">
-                          Microsoft Surface Pro
-                      </td>
-                      <td class="px-6 py-4">
-                          Silver
-                      </td>
-                      <td class="px-6 py-4">
-                          Laptop
-                      </td>
-                      <td class="px-6 py-4">
-                          $2999
-                      </td>
-                      <td class="px-6 py-4">
-                          $2999
-                      </td>
-                      <td class="px-1 py-4 cursor-pointer" onClick={() => setShowCustomerDropDown(!showCustomerDropDown)}>
-                        :
-                      </td>
-                      {
-                        showCustomerDropDown &&
-                        <div className='absolute top-[50px] right-[15px]'>
-                          <CustomerDropDown />
-                        </div>
-                      }
-                  </tr>
+                {
+                  allCustomers && allCustomers.map(customer => (
+                    <tr class="bg-white border-b cursor-pointer" onClick={e => navigate(`/customer/${customer.id}`)}>
+                        <td class="pl-3 pr-6 py-4">
+                          {customer.first_name} {customer.last_name}
+                            {/* Microsoft Surface Pro */}
+                        </td>
+                        <td class="px-6 py-4">
+                          {new Date(customer.date_joined).toDateString()}
+                        </td>
+                        <td class="px-6 py-4">
+                          {new Date(customer.last_seen).toDateString()}
+                        </td>
+                        <td class="px-6 py-4">
+                          {customer.email}
+                        </td>
+                        <td class="px-6 py-4">
+                          {customer.phone}
+                        </td>
+                        {/* <td class="px-1 py-4 cursor-pointer" onClick={() => setShowCustomerDropDown(!showCustomerDropDown)}>
+                          :
+                        </td>
+                        {
+                          showCustomerDropDown &&
+                          <div className='absolute top-[50px] right-[15px]'>
+                            <CustomerDropDown />
+                          </div>
+                        } */}
+                    </tr>
+                  ))
+                }
+              {/* https://cometake.pythonanywhere.com/administrator/dashboard/customer/{user_id} */}
               </tbody>
           </table>
       </div>
