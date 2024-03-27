@@ -27,13 +27,13 @@ const SideNav = () => {
           </Link>
         </li>
         <li className='py-3 pl-3'>
-          <Link to="/customers" className='flex items-center gap-4'>
+          <Link to="/notifications" className='flex items-center gap-4'>
             <PiNotification />
             <p>Notification</p>
           </Link>
         </li>
         <li className='py-3 pl-3'>
-          <Link to="/customers" className='flex items-center gap-4'>
+          <Link to="/transactions" className='flex items-center gap-4'>
             <TiDocumentText />
             <p>Transactions</p>
           </Link>

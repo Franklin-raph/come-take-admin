@@ -6,6 +6,7 @@ import Customers from './pages/customers/Customers'
 import Settings from './pages/settings/Settings'
 import AdminLogin from './pages/AdminLogin/AdminLogin'
 import SingleCustomer from './pages/singleCustomer/SingleCustomer'
+import Transactions from './pages/transactions/Transactions'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path='/admin-login' element={<AdminLogin baseUrl={baseUrl}/>}/>
             <Route path='/settings' element={<Settings baseUrl={baseUrl}/>}/>
             <Route path='/customer/:id' element={<SingleCustomer baseUrl={baseUrl}/>}/>
+            <Route path='/transactions' element={<Transactions baseUrl={baseUrl}/>}/>
           </Routes>
         </div>
       </div>

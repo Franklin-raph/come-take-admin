@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ImageView from '../../components/imageView/ImageView'
 
 const SingleCustomer = ({baseUrl}) => {
     const { id } = useParams()
+    const [imgView, setImgView] = useState('')
     const [customerDetails, setCustomerDetails] = useState()
     const [verifyCustomerModel, setVerifyCustomerModel] = useState(false)
+    const [loading, setLoading] = useState(false)
     const admin = JSON.parse(localStorage.getItem('admin'))
 
     console.log(id);
@@ -21,6 +24,7 @@ const SingleCustomer = ({baseUrl}) => {
     }
 
     async function acceptSeller(){
+        setLoading(true)
         const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
@@ -30,13 +34,16 @@ const SingleCustomer = ({baseUrl}) => {
             body: JSON.stringify({kyc_status:'approved'})
         })
         const data = await res.json()
+        if(res) setLoading(false)
         if(res.ok){
             alert("Seller successfully approved")
+            setVerifyCustomerModel(false)
         }
         console.log(res, data);
     }
 
     async function rejectSeller(){
+        setLoading(true)
         const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
@@ -46,12 +53,13 @@ const SingleCustomer = ({baseUrl}) => {
             body: JSON.stringify({kyc_status:'rejected'})
         })
         const data = await res.json()
+        if(res) setLoading(false)
         if(res.ok){
             alert("Seller not approved")
+            setVerifyCustomerModel(false)
         }
         console.log(res, data);
     }
-
 
 
     useEffect(() => {
@@ -71,10 +79,17 @@ const SingleCustomer = ({baseUrl}) => {
                             <div className='text-[#989898] text-center mt-[1rem]'>
                                 <p>Are you sure, you want to verify this customer to be a seller?</p>
                             </div>
-                            <div className='flex items-center gap-3 mt-5 text-white'>
-                                <button className='bg-red-500 rounded-md py-1 w-full' onClick={rejectSeller}>Reject</button>
-                                <button className='bg-[#96BF47] rounded-md py-1 w-full' onClick={acceptSeller}>Accept</button>
-                            </div>
+                            {
+                                loading ?
+                                <div className='flex items-center justify-center gap-3 mt-5 text-white w-full bg-gray-500 text-center rounded-md py-1'>
+                                    <p>Loading</p>
+                                </div>
+                                :
+                                <div className='flex items-center gap-3 mt-5 text-white'>
+                                    <button className='bg-red-500 rounded-md py-1 w-full' onClick={rejectSeller}>Reject</button>
+                                    <button className='bg-[#96BF47] rounded-md py-1 w-full' onClick={acceptSeller}>Accept</button>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -98,24 +113,27 @@ const SingleCustomer = ({baseUrl}) => {
                             </div>
                             <div>
                                 <p className='text-[#5C5C5C]'>Last Seen</p>
-                                <p className='text-[#5C5C5C] font-[500]'>{customerDetails.last_seen}</p>
+                                <p className='text-[#5C5C5C] font-[500]'>{new Date(customerDetails.last_seen).toDateString()}</p>
                             </div>
                             <div className='mt-8'>
                                 <p className='text-[#5C5C5C]'>Is Seller</p>
                                 <div className='flex items-center gap-3'>
-                                    <p className='text-[#5C5C5C] font-[500] capitalize'>{customerDetails && customerDetails.kyc_status}</p>
-                                    <button className='border py-[2px] mt-1 w-full text-[#5C5C5C] px-4 rounded-md' onClick={() => setVerifyCustomerModel(true)}>Verify</button>
+                                    <p className='text-[#5C5C5C] font-[500] capitalize'>{customerDetails.kyc_status}</p>
+                                    {
+                                        customerDetails.kyc_status === "not_set" ? "" : <button className='border py-[2px] mt-1 w-full text-[#5C5C5C] px-4 rounded-md' onClick={() => setVerifyCustomerModel(true)}>Verify</button>
+                                    }
+                                    
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div>
                                 <p className='text-[#5C5C5C]'>Email</p>
-                                <p className='text-[#5C5C5C] font-[500]'>emeka@gmail.com</p>
+                                <p className='text-[#5C5C5C] font-[500]'>{customerDetails.email}</p>
                             </div>
                             <div className='my-8'>
                                 <p className='text-[#5C5C5C]'>Date Of Birth</p>
-                                <p className='text-[#5C5C5C] font-[500]'>11/23/1990</p>
+                                <p className='text-[#5C5C5C] font-[500]'>{new Date(customerDetails.date_of_birth).toDateString()}</p>
                             </div>
                             <div>
                                 <p className='text-[#5C5C5C]'>Items Listed</p>
@@ -125,19 +143,27 @@ const SingleCustomer = ({baseUrl}) => {
                         <div>
                             <div>
                                 <p className='text-[#5C5C5C]'>Phone</p>
-                                <p className='text-[#5C5C5C] font-[500]'>08156546766</p>
+                                <p className='text-[#5C5C5C] font-[500]'>{customerDetails.phone}</p>
                             </div>
                             <div className='my-8'>
                                 <p className='text-[#5C5C5C]'>Date Created</p>
-                                <p className='text-[#5C5C5C] font-[500]'>11/23/2024</p>
+                                <p className='text-[#5C5C5C] font-[500]'>{new Date(customerDetails.date_joined).toDateString()}</p>
                             </div>
                             <div>
                                 <p className='text-[#5C5C5C] mb-1'>Account Status</p>
-                                <label class="inline-flex items-center cursor-pointer">
-                                    <input type="checkbox" value="" class="sr-only peer" />
-                                    <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
-                                </label>
-                                <p className='text-[#5C5C5C] font-[600]'>23 Items</p>
+                                {
+                                    customerDetails.is_active ?
+                                    <label class="inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" value="" class="sr-only peer" checked />
+                                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
+                                    </label>
+                                    :
+                                    <label class="inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" value="" class="sr-only peer" />
+                                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
+                                    </label>
+                                }
+                                {/* <p className='text-[#5C5C5C] font-[600]'>23 Items</p> */}
                             </div>
                         </div>
                     </div>
@@ -150,11 +176,11 @@ const SingleCustomer = ({baseUrl}) => {
                         <div className='flex items-center justify-between'>
                             <div>
                                 <p className='text-[#5C5C5C] font-[500]'>City</p>
-                                <p className='text-[#B6B6B6]'>Ikeja</p>
+                                <p className='text-[#B6B6B6]'>{customerDetails.city}</p>
                             </div>
                             <div>
                                 <p className='text-[#5C5C5C] font-[500]'>State</p>
-                                <p className='text-[#B6B6B6]'>Lagos</p>
+                                <p className='text-[#B6B6B6]'>{customerDetails.state}</p>
                             </div>
                         </div>
                         <div className='my-5'>
@@ -167,13 +193,16 @@ const SingleCustomer = ({baseUrl}) => {
                         </div>
                         <div className='my-5'>
                             <p className='text-[#5C5C5C] font-[500]'>JPG</p>
-                            <div>
-                                <img src="" alt="" />
-                                <img src="" alt="" />
+                            <div className='flex items-ceter gap-5'>
+                                <img onClick={e => setImgView(customerDetails.id_card_image_front_view)} src={customerDetails.id_card_image_front_view} className='w-[100px] h-[100px] object-contain cursor-pointer' alt="" />
+                                <img onClick={e => setImgView(customerDetails.id_card_image_back_view)} src={customerDetails.id_card_image_back_view} className='w-[100px] h-[100px] object-contain cursor-pointer' alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
+            }
+            {
+                imgView && <ImageView imgView={imgView} setImgView={setImgView}/>
             }
         </div>
     </div>

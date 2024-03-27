@@ -85,7 +85,11 @@ const Customers = ({baseUrl}) => {
                         <td class="px-6 py-4">
                           {new Date(customer.last_seen).toDateString()}
                         </td>
-                        <td class="px-6 py-4 capitalize">
+                        <td class={`px-6 py-4 capitalize ${
+                          customer.kyc_status === 'not_set' ? 'text-gray-500' :
+                          customer.kyc_status === 'pending' ? 'text-yellow-500' :
+                          customer.kyc_status === 'rejected' ? 'text-red-500' : 'text-green-500'
+                        }`}>
                           {customer.kyc_status}
                         </td>
                         <td class="px-6 py-4">
