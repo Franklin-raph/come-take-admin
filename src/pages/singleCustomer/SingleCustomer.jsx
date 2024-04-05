@@ -185,11 +185,11 @@ const SingleCustomer = ({baseUrl}) => {
                         </div>
                         <div className='my-5'>
                             <p className='text-[#5C5C5C] font-[500]'>Mode Of Verification</p>
-                            <p className='text-[#B6B6B6]'>International Passport</p>
+                            <p className='text-[#B6B6B6]'>{customerDetails.id_card_type}</p>
                         </div>
                         <div>
                             <p className='text-[#5C5C5C] font-[500]'>Passport Number</p>
-                            <p className='text-[#B6B6B6]'>NA23456</p>
+                            <p className='text-[#B6B6B6]'>{customerDetails.id_card_number}</p>
                         </div>
                         <div className='my-5'>
                             <p className='text-[#5C5C5C] font-[500]'>JPG</p>
