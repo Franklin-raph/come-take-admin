@@ -163,7 +163,6 @@ const SingleCustomer = ({baseUrl}) => {
                                         <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
                                     </label>
                                 }
-                                {/* <p className='text-[#5C5C5C] font-[600]'>23 Items</p> */}
                             </div>
                         </div>
                     </div>
