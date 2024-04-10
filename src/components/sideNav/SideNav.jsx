@@ -17,7 +17,7 @@ const SideNav = () => {
   }
 
   return (
-    <div className='bg-[#003C2F] w-[15%] h-[100dvh] fixed'>
+    <div className='bg-[#003C2F] w-[15%] h-[100dvh] fixed overflow-y-auto'>
       <h1 className='text-white text-[32px] text-center font-[700] my-5'>Admin</h1>
       <ul className='text-white'>
         <li className='bg-secondary-color py-3 pl-3'>
@@ -36,6 +36,18 @@ const SideNav = () => {
           <Link to="/transactions" className='flex items-center gap-4'>
             <TiDocumentText />
             <p>Transactions</p>
+          </Link>
+        </li>
+        <li className='py-3 pl-3'>
+          <Link to="/subscriptions" className='flex items-center gap-4'>
+            <TiDocumentText />
+            <p>Subscriptions</p>
+          </Link>
+        </li>
+        <li className='py-3 pl-3'>
+          <Link to="/categories" className='flex items-center gap-4'>
+            <TbSettings2 />
+            <p>Categories</p>
           </Link>
         </li>
         <li className='py-3 pl-3'>

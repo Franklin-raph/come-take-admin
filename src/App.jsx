@@ -7,6 +7,8 @@ import Settings from './pages/settings/Settings'
 import AdminLogin from './pages/AdminLogin/AdminLogin'
 import SingleCustomer from './pages/singleCustomer/SingleCustomer'
 import Transactions from './pages/transactions/Transactions'
+import Subscriptions from './pages/subscriptions/Subscriptions'
+import Categories from './pages/Category/Categories'
 
 function App() {
 
@@ -26,6 +28,8 @@ function App() {
             <Route path='/settings' element={<Settings baseUrl={baseUrl}/>}/>
             <Route path='/customer/:id' element={<SingleCustomer baseUrl={baseUrl}/>}/>
             <Route path='/transactions' element={<Transactions baseUrl={baseUrl}/>}/>
+            <Route path='/subscriptions' element={<Subscriptions baseUrl={baseUrl}/>}/>
+            <Route path='/categories' element={<Categories baseUrl={baseUrl}/>}/>
           </Routes>
         </div>
       </div>
