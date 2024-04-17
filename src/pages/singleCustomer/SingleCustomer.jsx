@@ -11,7 +11,6 @@ const SingleCustomer = ({baseUrl}) => {
     const admin = JSON.parse(localStorage.getItem('admin'))
 
     console.log(id);
-    // https://cometake.pythonanywhere.com/administrator/dashboard/customer/{user_id}
     async function getSingleCustomer(){
         const res = await fetch(`${baseUrl}/dashboard/customer/${id}`,{
             headers:{
@@ -25,7 +24,7 @@ const SingleCustomer = ({baseUrl}) => {
 
     async function acceptSeller(){
         setLoading(true)
-        const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/customer/${id}`,{
+        const res = await fetch(`https://api.yamltech.com/admin/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
                 'Content-Type':'application/json',
@@ -44,7 +43,7 @@ const SingleCustomer = ({baseUrl}) => {
 
     async function rejectSeller(){
         setLoading(true)
-        const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/customer/${id}`,{
+        const res = await fetch(`https://api.yamltech.com/admin/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
                 'Content-Type':'application/json',

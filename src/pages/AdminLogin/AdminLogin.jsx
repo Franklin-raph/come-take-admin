@@ -16,7 +16,7 @@ const AdminLogin = ({baseUrl}) => {
         alert('Please fill in the fields')
       }else{
           setLoading(true)
-          const res = await fetch(`https://cometake.pythonanywhere.com/login`, {
+          const res = await fetch(`https://api.yamltech.com/login`, {
             method:"POST",
             headers: {
               "Content-Type":"application/json"

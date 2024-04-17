@@ -19,7 +19,7 @@ const Settings = ({baseUrl}) => {
 
   async function getAdminDetails(){
     console.log('eee');
-    const res = await fetch(`https://cometake.pythonanywhere.com/complete-registration`,{
+    const res = await fetch(`https://api.yamltech.com/complete-registration`,{
       headers:{
         Authorization:`Bearer ${admin.data[0].access}`
       }
@@ -42,7 +42,7 @@ const Settings = ({baseUrl}) => {
   },[])
 
   async function updateProfile(){
-    const res = await fetch(`https://cometake.pythonanywhere.com/update-profile`,{
+    const res = await fetch(`https://api.yamltech.com/update-profile`,{
       method:"PUT",
       body: JSON.stringify({first_name, last_name, email, phone}),
       headers:{

@@ -16,7 +16,7 @@ const CreateSub = ({setShowSub}) => {
             alert("Please fill in all the fields")
         }else{
             setLoading(true)
-            const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/create-subscription-plan`,{
+            const res = await fetch(`https://api.yamltech.com/admin/dashboard/create-subscription-plan`,{
                 method:"POST",
                 headers:{
                     Authorization:`Bearer ${admin.data[0].access}`,

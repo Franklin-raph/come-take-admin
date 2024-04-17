@@ -1,0 +1,4404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <title>ValidationError
+      at /products</title>
+    <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background-color:#fff; color:#000; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; white-space: pre-wrap; word-break: break-word; }
+    summary { cursor: pointer; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+      padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+      font-weight:normal; font-size:11px; border:1px solid #ddd;
+    }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 10px 2px 40px; width: auto; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; color: #222; }
+    ul.traceback li.cause { word-break: break-word; }
+    ul.traceback li.frame { padding-bottom:1em; color:#4f4f4f; }
+    ul.traceback li.user { background-color:#e0e0e0; color:#000 }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#777; cursor:pointer; padding-left: 2px; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:#464646; background-color:#dfdfdf; padding: 3px 2px; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    .user div.context ol.context-line li { background-color:#bbb; color:#000; }
+    .user div.context ol li { color:#666; }
+    div.commands, summary.commands { margin-left: 40px; }
+    div.commands a, summary.commands { color:#555; text-decoration:none; }
+    .user div.commands a { color: black; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 10px 20px; }
+    #template-not-exist .postmortem-section { margin-bottom: 3px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em; font-weight:normal; }
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }
+    .append-bottom { margin-bottom: 10px; }
+    .fname { user-select: all; }
+  </style>
+
+    <script>
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(document.querySelectorAll('ol.pre-context'));
+      hideAll(document.querySelectorAll('ol.post-context'));
+      hideAll(document.querySelectorAll('div.pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block': 'none';
+        }
+      }
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.textContent = link.textContent.trim() == s1 ? s2: s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+  </script>
+
+  </head>
+  <body>
+    <div id="summary">
+      <h1>ValidationError
+        at /products</h1>
+      <pre
+        class="exception_value">[&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;]</pre>
+      <table class="meta">
+
+        <tr>
+          <th>Request Method:</th>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <th>Request URL:</th>
+          <td>http://api.yamltech.com/products</td>
+        </tr>
+
+        <tr>
+          <th>Django Version:</th>
+          <td>4.2</td>
+        </tr>
+
+        <tr>
+          <th>Exception Type:</th>
+          <td>ValidationError</td>
+        </tr>
+
+        <tr>
+          <th>Exception Value:</th>
+          <td><pre>[&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;]</pre></td>
+        </tr>
+
+        <tr>
+          <th>Exception Location:</th>
+          <td><span
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py</span>,
+            line 2692, in to_python</td>
+        </tr>
+
+        <tr>
+          <th>Raised during:</th>
+          <td>api.controllers.products.RetrieveCreateProductAllUsers</td>
+        </tr>
+
+        <tr>
+          <th>Python Executable:</th>
+          <td>/home/ubuntu/cometakeBE/myprojectenv/bin/python</td>
+        </tr>
+        <tr>
+          <th>Python Version:</th>
+          <td>3.10.12</td>
+        </tr>
+        <tr>
+          <th>Python Path:</th>
+          <td><pre>[&#x27;.&#x27;,
+ &#x27;/home/ubuntu/cometakeBE/myprojectenv/bin&#x27;,
+ &#x27;/usr/lib/python310.zip&#x27;,
+ &#x27;/usr/lib/python3.10&#x27;,
+ &#x27;/usr/lib/python3.10/lib-dynload&#x27;,
+ &#x27;/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages&#x27;]</pre></td>
+        </tr>
+        <tr>
+          <th>Server time:</th>
+          <td>Thu, 11 Apr 2024 15:47:17 +0000</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="traceback">
+      <h2>Traceback <span class="commands"><a href="#"
+            onclick="return switchPastebinFriendly(this);">
+            Switch to copy-and-paste view</a></span>
+      </h2>
+      <div id="browserTraceback">
+        <ul class="traceback">
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py</code>,
+            line 2690, in to_python
+
+            <div class="context" id="c140334717604928">
+
+              <ol start="2683" class="pre-context" id="pre140334717604928">
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>            return value</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>        return value.hex</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>    def to_python(self, value):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>        if value is not None and not isinstance(value, uuid.UUID):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>            input_form = &quot;int&quot; if isinstance(value, int) else &quot;hex&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>            try:</pre></li>
+
+              </ol>
+
+              <ol start="2690" class="context-line">
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                return uuid.UUID(**{input_form: value})</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='2691' class="post-context" id="post140334717604928">
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>            except (AttributeError, ValueError):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                raise exceptions.ValidationError(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                    self.error_messages[&quot;invalid&quot;],</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                    code=&quot;invalid&quot;,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                    params={&quot;value&quot;: value},</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604928', 'post140334717604928')"><pre>                )</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717604928">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>input_form</td>
+                    <td class="code"><pre>&#x27;hex&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.fields.UUIDField: id&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>value</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code class="fname">/usr/lib/python3.10/uuid.py</code>, line 174, in
+            __init__
+
+            <div class="context" id="c140334706172608">
+
+              <ol start="167" class="pre-context" id="pre140334706172608">
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>        for multiprocessing applications, via uuid_generate_time_safe(3).</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>        &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>        if [hex, bytes, bytes_le, fields, int].count(None) != 4:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            raise TypeError(&#x27;one of the hex, bytes, bytes_le, fields, &#x27;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>                            &#x27;or int arguments must be given&#x27;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>        if hex is not None:</pre></li>
+
+              </ol>
+
+              <ol start="174" class="context-line">
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            hex = hex.replace(&#x27;urn:&#x27;, &#x27;&#x27;).replace(&#x27;uuid:&#x27;, &#x27;&#x27;)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='175' class="post-context" id="post140334706172608">
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            hex = hex.strip(&#x27;{}&#x27;).replace(&#x27;-&#x27;, &#x27;&#x27;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            if len(hex) != 32:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>                raise ValueError(&#x27;badly formed hexadecimal UUID string&#x27;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            int = int_(hex, 16)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>        if bytes_le is not None:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706172608', 'post140334706172608')"><pre>            if len(bytes_le) != 16:</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334706172608">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>bytes</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>bytes_le</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>fields</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>hex</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>int</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>is_safe</td>
+                    <td
+                      class="code"><pre>&lt;SafeUUID.unknown: None&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>Error in formatting: AttributeError: &#x27;UUID&#x27; object has no attribute &#x27;int&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>version</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="cause"><h3>
+
+              During handling of the above exception (&#x27;list&#x27; object
+              has no attribute &#x27;replace&#x27;), another exception occurred:
+
+            </h3></li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/core/handlers/exception.py</code>,
+            line 42, in inner
+
+            <div class="context" id="c140334736560576">
+
+              <ol start="35" class="pre-context" id="pre140334736560576">
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>    can rely on getting a response instead of an exception.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>    &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>    if iscoroutinefunction(get_response):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>        @wraps(get_response)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>        async def inner(request):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>            try:</pre></li>
+
+              </ol>
+
+              <ol start="42" class="context-line">
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>                response = await get_response(request)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='43' class="post-context" id="post140334736560576">
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>            except Exception as exc:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>                response = await sync_to_async(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>                    response_for_exception, thread_sensitive=False</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>                )(request, exc)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre>            return response</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736560576', 'post140334736560576')"><pre></pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334736560576">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>exc</td>
+                    <td
+                      class="code"><pre>ValidationError([&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;])</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>get_response</td>
+                    <td
+                      class="code"><pre>&lt;bound method BaseHandler._get_response_async of &lt;django.core.handlers.asgi.ASGIHandler object at 0x7fa24254d990&gt;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;ASGIRequest: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/core/handlers/base.py</code>,
+            line 253, in _get_response_async
+
+            <div class="context" id="c140334717363776">
+
+              <ol start="246" class="pre-context" id="pre140334717363776">
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>            # If it is a synchronous view, run it in a subthread</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>            if not iscoroutinefunction(wrapped_callback):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                wrapped_callback = sync_to_async(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                    wrapped_callback, thread_sensitive=True</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>            try:</pre></li>
+
+              </ol>
+
+              <ol start="253" class="context-line">
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                response = await wrapped_callback(</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='254' class="post-context" id="post140334717363776">
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                    request, *callback_args, **callback_kwargs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>            except Exception as e:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                response = await sync_to_async(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                    self.process_exception_by_middleware,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717363776', 'post140334717363776')"><pre>                    thread_sensitive=True,</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717363776">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>callback</td>
+                    <td
+                      class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x7fa240001120&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>callback_args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>callback_kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>middleware_method</td>
+                    <td
+                      class="code"><pre>&lt;asgiref.sync.SyncToAsync object at 0x7fa2416639d0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;ASGIRequest: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.core.handlers.asgi.ASGIHandler object at 0x7fa24254d990&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>wrapped_callback</td>
+                    <td
+                      class="code"><pre>&lt;asgiref.sync.SyncToAsync object at 0x7fa23aabcd60&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/views/decorators/csrf.py</code>,
+            line 56, in wrapper_view
+
+            <div class="context" id="c140334717362240">
+
+              <ol start="49" class="pre-context" id="pre140334717362240">
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>def csrf_exempt(view_func):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    &quot;&quot;&quot;Mark a view function as being exempt from the CSRF view protection.&quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    # view_func.csrf_exempt = True would also work, but decorators are nicer</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    # if they don&#x27;t have side effects, so return a new function.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    @wraps(view_func)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    def wrapper_view(*args, **kwargs):</pre></li>
+
+              </ol>
+
+              <ol start="56" class="context-line">
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>        return view_func(*args, **kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='57' class="post-context" id="post140334717362240">
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    wrapper_view.csrf_exempt = True</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717362240', 'post140334717362240')"><pre>    return wrapper_view</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717362240">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td
+                      class="code"><pre>(&lt;ASGIRequest: POST &#x27;/products&#x27;&gt;,)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>view_func</td>
+                    <td
+                      class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x7fa240001090&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/views/generic/base.py</code>,
+            line 104, in view
+
+            <div class="context" id="c140334736569792">
+
+              <ol start="97" class="pre-context" id="pre140334736569792">
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>            self = cls(**initkwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>            self.setup(request, *args, **kwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>            if not hasattr(self, &quot;request&quot;):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>                raise AttributeError(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>                    &quot;%s instance has no &#x27;request&#x27; attribute. Did you override &quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>                    &quot;setup() and forget to call super()?&quot; % cls.__name__</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>                )</pre></li>
+
+              </ol>
+
+              <ol start="104" class="context-line">
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>            return self.dispatch(request, *args, **kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='105' class="post-context" id="post140334736569792">
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>        view.view_class = cls</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>        view.view_initkwargs = initkwargs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>        # __name__ and __qualname__ are intentionally left unchanged as</pre></li>
+
+                <li
+                  onclick="toggle('pre140334736569792', 'post140334736569792')"><pre>        # view_class should be used to robustly determine the name of the view</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334736569792">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>cls</td>
+                    <td
+                      class="code"><pre>&lt;class &#x27;api.controllers.products.RetrieveCreateProductAllUsers&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>initkwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;ASGIRequest: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py</code>,
+            line 509, in dispatch
+
+            <div class="context" id="c140334717357632">
+
+              <ol start="502" class="pre-context" id="pre140334717357632">
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>                                  self.http_method_not_allowed)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>            else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>                handler = self.http_method_not_allowed</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>            response = handler(request, *args, **kwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>        except Exception as exc:</pre></li>
+
+              </ol>
+
+              <ol start="509" class="context-line">
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>            response = self.handle_exception(exc)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='510' class="post-context" id="post140334717357632">
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>        return self.response</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>    def options(self, request, *args, **kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717357632', 'post140334717357632')"><pre>        &quot;&quot;&quot;</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717357632">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>handler</td>
+                    <td
+                      class="code"><pre>&lt;bound method RetrieveCreateProductAllUsers.post of &lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py</code>,
+            line 469, in handle_exception
+
+            <div class="context" id="c140334717366976">
+
+              <ol start="462" class="pre-context" id="pre140334717366976">
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        exception_handler = self.get_exception_handler()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        context = self.get_exception_handler_context()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        response = exception_handler(exc, context)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        if response is None:</pre></li>
+
+              </ol>
+
+              <ol start="469" class="context-line">
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>            self.raise_uncaught_exception(exc)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='470' class="post-context" id="post140334717366976">
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        response.exception = True</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        return response</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717366976', 'post140334717366976')"><pre>        if settings.DEBUG:</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717366976">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>{&#x27;args&#x27;: (),
+ &#x27;kwargs&#x27;: {},
+ &#x27;request&#x27;: &lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;,
+ &#x27;view&#x27;: &lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>exc</td>
+                    <td
+                      class="code"><pre>ValidationError([&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;])</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>exception_handler</td>
+                    <td
+                      class="code"><pre>&lt;function exception_handler at 0x7fa242e8cca0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py</code>,
+            line 480, in raise_uncaught_exception
+
+            <div class="context" id="c140334717603328">
+
+              <ol start="473" class="pre-context" id="pre140334717603328">
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>        if settings.DEBUG:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>            request = self.request</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>            renderer_format = getattr(request.accepted_renderer, &#x27;format&#x27;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>            use_plaintext_traceback = renderer_format not in (&#x27;html&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>            request.force_plaintext_errors(use_plaintext_traceback)</pre></li>
+
+              </ol>
+
+              <ol start="480" class="context-line">
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>        raise exc</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='481' class="post-context" id="post140334717603328">
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>    # Note: Views are made CSRF exempt from within `as_view` as to prevent</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>    # accidental removal of this exemption in cases where `dispatch` needs to</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>    # be overridden.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>    def dispatch(self, request, *args, **kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717603328', 'post140334717603328')"><pre>        &quot;&quot;&quot;</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717603328">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>exc</td>
+                    <td
+                      class="code"><pre>ValidationError([&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;])</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>renderer_format</td>
+                    <td class="code"><pre>&#x27;json&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>use_plaintext_traceback</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py</code>,
+            line 506, in dispatch
+
+            <div class="context" id="c140334717367360">
+
+              <ol start="499" class="pre-context" id="pre140334717367360">
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>            # Get the appropriate handler method</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>            if request.method.lower() in self.http_method_names:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>                handler = getattr(self, request.method.lower(),</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>                                  self.http_method_not_allowed)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>            else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>                handler = self.http_method_not_allowed</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre></pre></li>
+
+              </ol>
+
+              <ol start="506" class="context-line">
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>            response = handler(request, *args, **kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='507' class="post-context" id="post140334717367360">
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>        except Exception as exc:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>            response = self.handle_exception(exc)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717367360', 'post140334717367360')"><pre>        return self.response</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717367360">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>handler</td>
+                    <td
+                      class="code"><pre>&lt;bound method RetrieveCreateProductAllUsers.post of &lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame user">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/./api/controllers/products.py</code>,
+            line 132, in post
+
+            <div class="context" id="c140334705252800">
+
+              <ol start="125" class="pre-context" id="pre140334705252800">
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            product_image = request.data.get(&quot;product_image&quot;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            if not cover_image:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                return http.failed_response(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                    None, &quot;product_cover_image must be included&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            if not product_image:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                return http.failed_response(None, &quot;product_images must be included&quot;)</pre></li>
+
+              </ol>
+
+              <ol start="132" class="context-line">
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            media = product_model.Media.objects.filter(id=cover_image).first()</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='133' class="post-context" id="post140334705252800">
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            if not media:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                return http.failed_response(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                    None, f&quot;media id {cover_image} not found&quot;, status.HTTP_404_NOT_FOUND</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            product.product_cover_image = media</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705252800', 'post140334705252800')"><pre>            for id in product_image:</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334705252800">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>cover_image</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>plan</td>
+                    <td
+                      class="code"><pre>&lt;Payment: Payment object (eafbbe85-d82b-447b-b59c-0c5598c0604a)&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>product</td>
+                    <td
+                      class="code"><pre>&lt;Products: Products object (5120d0a0-85ea-4994-a3ac-cc8b2d02856f)&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>product_image</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>request</td>
+                    <td
+                      class="code"><pre>&lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;api.controllers.products.RetrieveCreateProductAllUsers object at 0x7fa23aabc2e0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>serializer</td>
+                    <td
+                      class="code"><pre>ProductSerializer(context={&#x27;request&#x27;: &lt;rest_framework.request.Request: POST &#x27;/products&#x27;&gt;}, data={&#x27;category&#x27;: &#x27;6d695828-0133-48d4-b078-8c9d162633fa&#x27;, &#x27;product_cover_image&#x27;: &#x27;0fba46d7-c694-4e6a-984e-0b5459ec171e&#x27;, &#x27;product_image&#x27;: [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;], &#x27;name&#x27;: &#x27;Toyota Camry 2020&#x27;, &#x27;in_stock&#x27;: True, &#x27;brand_name&#x27;: &#x27;Toyota&#x27;, &#x27;color&#x27;: &#x27;Red&#x27;, &#x27;description&#x27;: &#x27;Brand new toyota camry 2020&#x27;, &#x27;condition&#x27;: &#x27;new&#x27;, &#x27;warranty_duration&#x27;: 6, &#x27;warranty_address&#x27;: &#x27;Christ the king hostel Ifite Awka&#x27;, &#x27;warranty_duration_type&#x27;: &#x27;month&#x27;, &#x27;weight&#x27;: &#x27;12000&#x27;, &#x27;price&#x27;: &#x27;20000000&#x27;}):
+    id = UUIDField(read_only=True)
+    seller = UserSellerToSaveSerializer(required=False):
+        id = UUIDField(read_only=True)
+        email = EmailField(max_length=254, validators=[&lt;UniqueValidator(queryset=User.objects.all())&gt;])
+        first_name = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        last_name = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        password = CharField(max_length=128, min_length=8, style={&#x27;input_type&#x27;: &#x27;password&#x27;}, write_only=True)
+        street = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        phone = CharField(allow_blank=True, allow_null=True, max_length=255, required=False, validators=[&lt;UniqueValidator(queryset=User.objects.all())&gt;])
+        state = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        city = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        last_seen = DateTimeField(allow_null=True, required=False)
+        is_seller = BooleanField(required=False)
+        lga = CharField(allow_blank=True, allow_null=True, max_length=255, required=False)
+        is_active = BooleanField(read_only=True)
+        date_joined = DateTimeField(read_only=True)
+    created_at = DateTimeField(allow_null=True, label=&#x27;Date Created&#x27;, read_only=True)
+    updated_at = DateTimeField(allow_null=True, label=&#x27;Date Updated&#x27;, read_only=True)
+    is_fake = BooleanField(required=False)
+    name = CharField(max_length=255)
+    in_stock = BooleanField(required=False)
+    brand_name = CharField(max_length=255)
+    color = CharField(max_length=255)
+    weight = FloatField()
+    description = CharField(style={&#x27;base_template&#x27;: &#x27;textarea.html&#x27;})
+    price = FloatField()
+    condition = ChoiceField(choices=((&#x27;new&#x27;, &#x27;new&#x27;), (&#x27;used_like_new&#x27;, &#x27;used_like_new&#x27;), (&#x27;used_like_good&#x27;, &#x27;used_like_good&#x27;), (&#x27;used_like_fair&#x27;, &#x27;used_like_fair&#x27;)))
+    warranty_duration = IntegerField(required=False)
+    warranty_duration_type = ChoiceField(choices=((&#x27;none&#x27;, &#x27;none&#x27;), (&#x27;month&#x27;, &#x27;month&#x27;), (&#x27;year&#x27;, &#x27;year&#x27;)), required=False)
+    warranty_address = CharField(max_length=255, required=False)
+    unlist = BooleanField(allow_null=True, required=False)
+    category = PrimaryKeyRelatedField(allow_null=True, queryset=Category.objects.all(), required=False)</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/manager.py</code>,
+            line 87, in manager_method
+
+            <div class="context" id="c140334705251776">
+
+              <ol start="80" class="pre-context" id="pre140334705251776">
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>        return []</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>    @classmethod</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>        def create_method(name, method):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>            @wraps(method)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
+
+              </ol>
+
+              <ol start="87" class="context-line">
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='88' class="post-context" id="post140334705251776">
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>            return manager_method</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>        new_methods = {}</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>        for name, method in inspect.getmembers(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334705251776', 'post140334705251776')"><pre>            queryset_class, predicate=inspect.isfunction</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334705251776">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td
+                      class="code"><pre>{&#x27;id&#x27;: [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+        &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+        &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+        &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+        &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+        &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>name</td>
+                    <td class="code"><pre>&#x27;filter&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7fa23bacde40&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py</code>,
+            line 1436, in filter
+
+            <div class="context" id="c140334717368832">
+
+              <ol start="1429" class="pre-context" id="pre140334717368832">
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>    def filter(self, *args, **kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        Return a new QuerySet instance with the args ANDed to the existing</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        set.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        self._not_support_combined_queries(&quot;filter&quot;)</pre></li>
+
+              </ol>
+
+              <ol start="1436" class="context-line">
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        return self._filter_or_exclude(False, args, kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1437' class="post-context" id="post140334717368832">
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>    def exclude(self, *args, **kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        Return a new QuerySet instance with NOT (args) ANDed to the existing</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        set.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368832', 'post140334717368832')"><pre>        &quot;&quot;&quot;</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717368832">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td
+                      class="code"><pre>{&#x27;id&#x27;: [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+        &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+        &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+        &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+        &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+        &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;QuerySet [&lt;Media: Media object (4546d283-d716-4e73-a718-a0b8cc77a3b1)&gt;]&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py</code>,
+            line 1454, in _filter_or_exclude
+
+            <div class="context" id="c140334717356160">
+
+              <ol start="1447" class="pre-context" id="pre140334717356160">
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        if (args or kwargs) and self.query.is_sliced:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>            raise TypeError(&quot;Cannot filter a query once a slice has been taken.&quot;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        clone = self._chain()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        if self._defer_next_filter:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>            self._defer_next_filter = False</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>            clone._deferred_filter = negate, args, kwargs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        else:</pre></li>
+
+              </ol>
+
+              <ol start="1454" class="context-line">
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>            clone._filter_or_exclude_inplace(negate, args, kwargs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1455' class="post-context" id="post140334717356160">
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        return clone</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>    def _filter_or_exclude_inplace(self, negate, args, kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        if negate:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>            self._query.add_q(~Q(*args, **kwargs))</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717356160', 'post140334717356160')"><pre>        else:</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717356160">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>clone</td>
+                    <td
+                      class="code"><pre>&lt;QuerySet [&lt;Media: Media object (4546d283-d716-4e73-a718-a0b8cc77a3b1)&gt;]&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td
+                      class="code"><pre>{&#x27;id&#x27;: [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+        &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+        &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+        &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+        &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+        &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>negate</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;QuerySet [&lt;Media: Media object (4546d283-d716-4e73-a718-a0b8cc77a3b1)&gt;]&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py</code>,
+            line 1461, in _filter_or_exclude_inplace
+
+            <div class="context" id="c140334717368576">
+
+              <ol start="1454" class="pre-context" id="pre140334717368576">
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>            clone._filter_or_exclude_inplace(negate, args, kwargs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        return clone</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>    def _filter_or_exclude_inplace(self, negate, args, kwargs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        if negate:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>            self._query.add_q(~Q(*args, **kwargs))</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        else:</pre></li>
+
+              </ol>
+
+              <ol start="1461" class="context-line">
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>            self._query.add_q(Q(*args, **kwargs))</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1462' class="post-context" id="post140334717368576">
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>    def complex_filter(self, filter_obj):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        &quot;&quot;&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        Return a new QuerySet instance with filter_obj added to the filters.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717368576', 'post140334717368576')"><pre>        filter_obj can be a Q object or a dictionary of keyword lookup</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717368576">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>kwargs</td>
+                    <td
+                      class="code"><pre>{&#x27;id&#x27;: [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+        &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+        &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+        &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+        &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+        &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>negate</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;QuerySet [&lt;Media: Media object (4546d283-d716-4e73-a718-a0b8cc77a3b1)&gt;]&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py</code>,
+            line 1498, in add_q
+
+            <div class="context" id="c140334717365824">
+
+              <ol start="1491" class="pre-context" id="pre140334717365824">
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        # type to remain inner. Existing outer joins can however be demoted.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        # (Consider case where rel_a is LOUTER and rel_a__col=1 is added - if</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        # rel_a doesn&#x27;t produce any rows, then the whole condition must fail.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        # So, demotion is OK.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        existing_inner = {</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>            a for a in self.alias_map if self.alias_map[a].join_type == INNER</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        }</pre></li>
+
+              </ol>
+
+              <ol start="1498" class="context-line">
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        clause, _ = self._add_q(q_object, self.used_aliases)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1499' class="post-context" id="post140334717365824">
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        if clause:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>            self.where.add(clause, AND)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        self.demote_joins(existing_inner)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>    def build_where(self, filter_expr):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717365824', 'post140334717365824')"><pre>        return self.build_filter(filter_expr, allow_joins=False)[0]</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717365824">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>existing_inner</td>
+                    <td class="code"><pre>set()</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>q_object</td>
+                    <td
+                      class="code"><pre>&lt;Q: (AND: (&#x27;id&#x27;, [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]))&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x7fa23aabebf0&gt;</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py</code>,
+            line 1529, in _add_q
+
+            <div class="context" id="c140334718355008">
+
+              <ol start="1522" class="pre-context" id="pre140334718355008">
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        current_negated ^= q_object.negated</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        branch_negated = branch_negated or q_object.negated</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        target_clause = WhereNode(connector=connector, negated=q_object.negated)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        joinpromoter = JoinPromoter(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>            q_object.connector, len(q_object.children), current_negated</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>        for child in q_object.children:</pre></li>
+
+              </ol>
+
+              <ol start="1529" class="context-line">
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>            child_clause, needed_inner = self.build_filter(</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1530' class="post-context" id="post140334718355008">
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                child,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                can_reuse=used_aliases,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                branch_negated=branch_negated,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                current_negated=current_negated,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                allow_joins=allow_joins,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334718355008', 'post140334718355008')"><pre>                split_subq=split_subq,</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334718355008">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>allow_joins</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>branch_negated</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>check_filterable</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>child</td>
+                    <td class="code"><pre>(&#x27;id&#x27;,
+ [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+  &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+  &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+  &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+  &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+  &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;])</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>connector</td>
+                    <td class="code"><pre>&#x27;AND&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>current_negated</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>joinpromoter</td>
+                    <td
+                      class="code"><pre>JoinPromoter(connector=&#x27;AND&#x27;, num_children=1, negated=False)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>q_object</td>
+                    <td
+                      class="code"><pre>&lt;Q: (AND: (&#x27;id&#x27;, [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]))&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x7fa23aabebf0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>split_subq</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>summarize</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>target_clause</td>
+                    <td class="code"><pre>&lt;WhereNode: (AND: )&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>used_aliases</td>
+                    <td class="code"><pre>{&#x27;core_media&#x27;}</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py</code>,
+            line 1444, in build_filter
+
+            <div class="context" id="c140334717360192">
+
+              <ol start="1437" class="pre-context" id="pre140334717360192">
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>            else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>                col = MultiColSource(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>                    alias, targets, join_info.targets, join_info.final_field</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>            col = self._get_col(targets[0], join_info.final_field, alias)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre></pre></li>
+
+              </ol>
+
+              <ol start="1444" class="context-line">
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        condition = self.build_lookup(lookups, col, value)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1445' class="post-context" id="post140334717360192">
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        lookup_type = condition.lookup_name</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        clause = WhereNode([condition], connector=AND)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        require_outer = (</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>            lookup_type == &quot;isnull&quot; and condition.rhs is True and not current_negated</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717360192', 'post140334717360192')"><pre>        )</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717360192">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>alias</td>
+                    <td class="code"><pre>&#x27;core_media&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>allow_joins</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>allow_many</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>arg</td>
+                    <td class="code"><pre>&#x27;id&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>branch_negated</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>can_reuse</td>
+                    <td class="code"><pre>{&#x27;core_media&#x27;}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>check_filterable</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>col</td>
+                    <td
+                      class="code"><pre>Col(core_media, core.Media.id)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>current_negated</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>filter_expr</td>
+                    <td class="code"><pre>(&#x27;id&#x27;,
+ [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+  &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+  &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+  &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+  &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+  &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;])</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>join_info</td>
+                    <td
+                      class="code"><pre>JoinInfo(final_field=&lt;django.db.models.fields.UUIDField: id&gt;, targets=(&lt;django.db.models.fields.UUIDField: id&gt;,), opts=&lt;Options for Media&gt;, joins=[&#x27;core_media&#x27;], path=[], transform_function=&lt;function Query.setup_joins.&lt;locals&gt;.final_transformer at 0x7fa23861df30&gt;)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>join_list</td>
+                    <td class="code"><pre>[&#x27;core_media&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>lookups</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>opts</td>
+                    <td class="code"><pre>&lt;Options for Media&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>parts</td>
+                    <td class="code"><pre>[&#x27;id&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>pre_joins</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>reffed_expression</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>reuse_with_filtered_relation</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x7fa23aabebf0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>split_subq</td>
+                    <td class="code"><pre>True</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>summarize</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>targets</td>
+                    <td
+                      class="code"><pre>(&lt;django.db.models.fields.UUIDField: id&gt;,)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>used_joins</td>
+                    <td class="code"><pre>{&#x27;core_media&#x27;}</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>value</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py</code>,
+            line 1271, in build_lookup
+
+            <div class="context" id="c140334717614144">
+
+              <ol start="1264" class="pre-context" id="pre140334717614144">
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            # and do an Exact lookup against it.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            lhs = self.try_transform(lhs, lookup_name)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            lookup_name = &quot;exact&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            lookup_class = lhs.get_lookup(lookup_name)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            if not lookup_class:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>                return</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre></pre></li>
+
+              </ol>
+
+              <ol start="1271" class="context-line">
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>        lookup = lookup_class(lhs, rhs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='1272' class="post-context" id="post140334717614144">
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>        # Interpret &#x27;__exact=None&#x27; as the sql &#x27;is NULL&#x27;; otherwise, reject all</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>        # uses of None as a query value unless the lookup supports it.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>        if lookup.rhs is None and not lookup.can_use_none_as_rhs:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            if lookup_name not in (&quot;exact&quot;, &quot;iexact&quot;):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>                raise ValueError(&quot;Cannot use None as a query value&quot;)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717614144', 'post140334717614144')"><pre>            return lhs.get_lookup(&quot;isnull&quot;)(lhs, True)</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717614144">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>lhs</td>
+                    <td
+                      class="code"><pre>Col(core_media, core.Media.id)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>lookup_class</td>
+                    <td
+                      class="code"><pre>&lt;class &#x27;django.db.models.lookups.Exact&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>lookup_name</td>
+                    <td class="code"><pre>&#x27;exact&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>lookups</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>rhs</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x7fa23aabebf0&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>transforms</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py</code>,
+            line 27, in __init__
+
+            <div class="context" id="c140334717604224">
+
+              <ol start="20" class="pre-context" id="pre140334717604224">
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>class Lookup(Expression):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>    lookup_name = None</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>    prepare_rhs = True</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>    can_use_none_as_rhs = False</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>    def __init__(self, lhs, rhs):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        self.lhs, self.rhs = lhs, rhs</pre></li>
+
+              </ol>
+
+              <ol start="27" class="context-line">
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        self.rhs = self.get_prep_lookup()</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='28' class="post-context" id="post140334717604224">
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        self.lhs = self.get_prep_lhs()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        if hasattr(self.lhs, &quot;get_bilateral_transforms&quot;):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>            bilateral_transforms = self.lhs.get_bilateral_transforms()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>            bilateral_transforms = []</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717604224', 'post140334717604224')"><pre>        if bilateral_transforms:</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717604224">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>lhs</td>
+                    <td
+                      class="code"><pre>Col(core_media, core.Media.id)</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>rhs</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>Exact(Col(core_media, core.Media.id), [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;])</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py</code>,
+            line 341, in get_prep_lookup
+
+            <div class="context" id="c140334706170368">
+
+              <ol start="334" class="pre-context" id="pre140334706170368">
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                    self.rhs.clear_select_clause()</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                    self.rhs.add_fields([&quot;pk&quot;])</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>            else:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                raise ValueError(</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                    &quot;The QuerySet value for an exact lookup must be limited to &quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                    &quot;one result using slicing.&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>                )</pre></li>
+
+              </ol>
+
+              <ol start="341" class="context-line">
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>        return super().get_prep_lookup()</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='342' class="post-context" id="post140334706170368">
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>    def as_sql(self, compiler, connection):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>        # Avoid comparison against direct rhs if lhs is a boolean value. That</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>        # turns &quot;boolfield__exact=True&quot; into &quot;WHERE boolean_field&quot; instead of</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>        # &quot;WHERE boolean_field = True&quot; when allowed.</pre></li>
+
+                <li
+                  onclick="toggle('pre140334706170368', 'post140334706170368')"><pre>        if (</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334706170368">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>Query</td>
+                    <td
+                      class="code"><pre>&lt;class &#x27;django.db.models.sql.query.Query&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>__class__</td>
+                    <td
+                      class="code"><pre>&lt;class &#x27;django.db.models.lookups.Exact&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>Exact(Col(core_media, core.Media.id), [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;])</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py</code>,
+            line 85, in get_prep_lookup
+
+            <div class="context" id="c140334717602432">
+
+              <ol start="78" class="pre-context" id="pre140334717602432">
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>            self.lhs, self.rhs = new_exprs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>    def get_prep_lookup(self):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>        if not self.prepare_rhs or hasattr(self.rhs, &quot;resolve_expression&quot;):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>            return self.rhs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>        if hasattr(self.lhs, &quot;output_field&quot;):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>            if hasattr(self.lhs.output_field, &quot;get_prep_value&quot;):</pre></li>
+
+              </ol>
+
+              <ol start="85" class="context-line">
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>                return self.lhs.output_field.get_prep_value(self.rhs)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='86' class="post-context" id="post140334717602432">
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>        elif self.rhs_is_direct_value():</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>            return Value(self.rhs)</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>        return self.rhs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>    def get_prep_lhs(self):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602432', 'post140334717602432')"><pre>        if hasattr(self.lhs, &quot;resolve_expression&quot;):</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717602432">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>Exact(Col(core_media, core.Media.id), [&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;])</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py</code>,
+            line 2674, in get_prep_value
+
+            <div class="context" id="c140334717605248">
+
+              <ol start="2667" class="pre-context" id="pre140334717605248">
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        return name, path, args, kwargs</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>    def get_internal_type(self):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        return &quot;UUIDField&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>    def get_prep_value(self, value):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        value = super().get_prep_value(value)</pre></li>
+
+              </ol>
+
+              <ol start="2674" class="context-line">
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        return self.to_python(value)</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='2675' class="post-context" id="post140334717605248">
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>    def get_db_prep_value(self, value, connection, prepared=False):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        if value is None:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>            return None</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>        if not isinstance(value, uuid.UUID):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717605248', 'post140334717605248')"><pre>            value = self.to_python(value)</pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717605248">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>__class__</td>
+                    <td
+                      class="code"><pre>&lt;class &#x27;django.db.models.fields.UUIDField&#x27;&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.fields.UUIDField: id&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>value</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+          <li class="frame django">
+
+            <code
+              class="fname">/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py</code>,
+            line 2692, in to_python
+
+            <div class="context" id="c140334717602240">
+
+              <ol start="2685" class="pre-context" id="pre140334717602240">
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre></pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>    def to_python(self, value):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>        if value is not None and not isinstance(value, uuid.UUID):</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>            input_form = &quot;int&quot; if isinstance(value, int) else &quot;hex&quot;</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>            try:</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                return uuid.UUID(**{input_form: value})</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>            except (AttributeError, ValueError):</pre></li>
+
+              </ol>
+
+              <ol start="2692" class="context-line">
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                raise exceptions.ValidationError(</pre>
+                  <span>…</span></li>
+              </ol>
+
+              <ol start='2693' class="post-context" id="post140334717602240">
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                    self.error_messages[&quot;invalid&quot;],</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                    code=&quot;invalid&quot;,</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                    params={&quot;value&quot;: value},</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>                )</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre>        return value</pre></li>
+
+                <li
+                  onclick="toggle('pre140334717602240', 'post140334717602240')"><pre></pre></li>
+
+              </ol>
+
+            </div>
+
+            <details>
+              <summary class="commands">Local vars</summary>
+
+              <table class="vars" id="v140334717602240">
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>input_form</td>
+                    <td class="code"><pre>&#x27;hex&#x27;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>self</td>
+                    <td
+                      class="code"><pre>&lt;django.db.models.fields.UUIDField: id&gt;</pre></td>
+                  </tr>
+
+                  <tr>
+                    <td>value</td>
+                    <td
+                      class="code"><pre>[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;,
+ &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;,
+ &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;,
+ &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;,
+ &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;,
+ &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]</pre></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </details>
+
+          </li>
+
+        </ul>
+      </div>
+
+      <form action="https://dpaste.com/" name="pasteform" id="pasteform"
+        method="post">
+        <div id="pastebinTraceback" class="pastebin">
+          <input type="hidden" name="language" value="PythonConsole">
+          <input type="hidden" name="title"
+            value="ValidationError at /products">
+          <input type="hidden" name="source" value="Django Dpaste Agent">
+          <input type="hidden" name="poster" value="Django">
+          <textarea name="content" id="traceback_area" cols="140" rows="25">
+Environment:
+
+
+Request Method: POST
+Request URL: http://api.yamltech.com/products
+
+Django Version: 4.2
+Python Version: 3.10.12
+Installed Applications:
+[&#x27;django.contrib.admin&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;,
+ &#x27;api.apps.ApiConfig&#x27;,
+ &#x27;core.apps.CoreConfig&#x27;,
+ &#x27;support&#x27;,
+ &#x27;drf_yasg&#x27;,
+ &#x27;rest_framework&#x27;,
+ &#x27;rest_framework.authtoken&#x27;,
+ &#x27;rest_framework_simplejwt&#x27;,
+ &#x27;corsheaders&#x27;,
+ &#x27;daphne&#x27;,
+ &#x27;channels&#x27;,
+ &#x27;django_redis&#x27;,
+ &#x27;django_otp&#x27;,
+ &#x27;django_otp.plugins.otp_totp&#x27;,
+ &#x27;minio_storage&#x27;]
+Installed Middleware:
+[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;corsheaders.middleware.CorsMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django_otp.middleware.OTPMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;,
+ &#x27;api.middlewares.user.UpdateLastSeenMiddleware&#x27;]
+
+
+
+Traceback (most recent call last):
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2690, in to_python
+    return uuid.UUID(**{input_form: value})
+  File "/usr/lib/python3.10/uuid.py", line 174, in __init__
+    hex = hex.replace(&#x27;urn:&#x27;, &#x27;&#x27;).replace(&#x27;uuid:&#x27;, &#x27;&#x27;)
+
+During handling of the above exception (&#x27;list&#x27; object has no attribute &#x27;replace&#x27;), another exception occurred:
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/cometakeBE/./api/controllers/products.py", line 132, in post
+    media = product_model.Media.objects.filter(id=cover_image).first()
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1498, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1529, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1444, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1271, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2674, in get_prep_value
+    return self.to_python(value)
+  File "/home/ubuntu/cometakeBE/myprojectenv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2692, in to_python
+    raise exceptions.ValidationError(
+
+Exception Type: ValidationError at /products
+Exception Value: [&quot;“[&#x27;2c48ea12-4318-4c89-8da8-fe80e2f3ae73&#x27;, &#x27;886db16e-b113-4bf7-a9c7-6fb9ceb9935b&#x27;, &#x27;70b544d9-a652-45c2-b761-85cc7d810ecb&#x27;, &#x27;7a84c2c6-8c02-4824-b0bc-dfabac488f19&#x27;, &#x27;1e88cc18-6edf-4c93-b8bf-8877cabadc8a&#x27;, &#x27;8b0a3221-3a5e-4674-a1ca-9c70bb24409f&#x27;]” is not a valid UUID.&quot;]
+</textarea>
+          <br><br>
+          <input type="submit" value="Share this traceback on a public website">
+        </div>
+      </form>
+
+    </div>
+
+    <div id="requestinfo">
+      <h2>Request information</h2>
+
+      <h3 id="user-info">USER</h3>
+      <p>nwaforglory6@gmail.com</p>
+
+      <h3 id="get-info">GET</h3>
+
+      <p>No GET data</p>
+
+      <h3 id="post-info">POST</h3>
+
+      <p>No POST data</p>
+
+      <h3 id="files-info">FILES</h3>
+
+      <p>No FILES data</p>
+
+      <h3 id="cookie-info">COOKIES</h3>
+
+      <p>No cookie data</p>
+
+      <h3 id="meta-info">META</h3>
+      <table class="req">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>CONTENT_LENGTH</td>
+            <td class="code"><pre>&#x27;694&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CONTENT_TYPE</td>
+            <td class="code"><pre>&#x27;application/json&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_ACCEPT</td>
+            <td class="code"><pre>&#x27;*/*&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_ACCEPT_ENCODING</td>
+            <td class="code"><pre>&#x27;gzip, deflate, br&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_AUTHORIZATION</td>
+            <td class="code"><pre>(&#x27;Bearer &#x27;
+ &#x27;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0Mzg0NjE4LCJpYXQiOjE3MTI4NDg2MTgsImp0aSI6IjVkNjc5ODYyN2RjZDQyOGE4NDY0Y2E3NDRkNmJjNDEzIiwidXNlcl9pZCI6IjUwOWEzZmRmLWY2MmEtNGM3MC04YmYyLTExOTIxNzI0MmRkYyJ9.92p-bw3T-lvU9jIZNG7IU1XeRofZR0uhk3OLEc8m5pM&#x27;)</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_CONNECTION</td>
+            <td class="code"><pre>&#x27;Upgrade&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_HOST</td>
+            <td class="code"><pre>&#x27;api.yamltech.com&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_USER_AGENT</td>
+            <td
+              class="code"><pre>&#x27;Thunder Client (https://www.thunderclient.com)&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>HTTP_X_FORWARDED_FOR</td>
+            <td class="code"><pre>&#x27;105.112.217.137&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>PATH_INFO</td>
+            <td class="code"><pre>&#x27;/products&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>QUERY_STRING</td>
+            <td class="code"><pre>&#x27;&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>REMOTE_ADDR</td>
+            <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>REMOTE_HOST</td>
+            <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>REMOTE_PORT</td>
+            <td class="code"><pre>51402</pre></td>
+          </tr>
+
+          <tr>
+            <td>REQUEST_METHOD</td>
+            <td class="code"><pre>&#x27;POST&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SCRIPT_NAME</td>
+            <td class="code"><pre>&#x27;&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SERVER_NAME</td>
+            <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SERVER_PORT</td>
+            <td class="code"><pre>&#x27;8000&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>wsgi.multiprocess</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>wsgi.multithread</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3 id="settings-info">Settings</h3>
+      <h4>Using settings module <code>backend.settings</code></h4>
+      <table class="req">
+        <thead>
+          <tr>
+            <th>Setting</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>ABSOLUTE_URL_OVERRIDES</td>
+            <td class="code"><pre>{}</pre></td>
+          </tr>
+
+          <tr>
+            <td>ADMINS</td>
+            <td
+              class="code"><pre>[(&#x27;Temitayo&#x27;, &#x27;brandnaware@outlook.com&#x27;), (&#x27;Grampet&#x27;, &#x27;info@grampet.com&#x27;)]</pre></td>
+          </tr>
+
+          <tr>
+            <td>ALLOWED_HOSTS</td>
+            <td class="code"><pre>[&#x27;*&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>APPEND_SLASH</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>APP_ENV</td>
+            <td class="code"><pre>&#x27;local&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>APP_ISO_NAME</td>
+            <td class="code"><pre>&#x27;cometake&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>APP_NAME</td>
+            <td class="code"><pre>&#x27;cometake&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>ASGI_APPLICATION</td>
+            <td
+              class="code"><pre>&#x27;backend.asgi.application&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AUTHENTICATION_BACKENDS</td>
+            <td
+              class="code"><pre>[&#x27;django.contrib.auth.backends.ModelBackend&#x27;,
+ &#x27;allauth.account.auth_backends.AuthenticationBackend&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>AUTH_PASSWORD_VALIDATORS</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AUTH_USER_MODEL</td>
+            <td class="code"><pre>&#x27;core.User&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AWS_ACCESS_KEY_ID</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AWS_S3_CUSTOM_DOMAIN</td>
+            <td
+              class="code"><pre>&#x27;cometakebucket2.s3.amazonaws.com&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AWS_S3_FILE_OVERWRITE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>AWS_SECRET_ACCESS_KEY</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>AWS_STORAGE_BUCKET_NAME</td>
+            <td class="code"><pre>&#x27;cometakebucket2&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>BASE_DIR</td>
+            <td
+              class="code"><pre>PosixPath(&#x27;/home/ubuntu/cometakeBE&#x27;)</pre></td>
+          </tr>
+
+          <tr>
+            <td>CACHES</td>
+            <td
+              class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;django_redis.cache.RedisCache&#x27;,
+             &#x27;KEY_PREFIX&#x27;: &#x27;********************&#x27;,
+             &#x27;LOCATION&#x27;: &#x27;redis://localhost:6379/1&#x27;,
+             &#x27;OPTIONS&#x27;: {&#x27;CLIENT_CLASS&#x27;: &#x27;django_redis.client.DefaultClient&#x27;}}}</pre></td>
+          </tr>
+
+          <tr>
+            <td>CACHE_MIDDLEWARE_ALIAS</td>
+            <td class="code"><pre>&#x27;default&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CACHE_MIDDLEWARE_SECONDS</td>
+            <td class="code"><pre>600</pre></td>
+          </tr>
+
+          <tr>
+            <td>CHANNEL_LAYERS</td>
+            <td
+              class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;channels_redis.core.RedisChannelLayer&#x27;,
+             &#x27;CONFIG&#x27;: {&#x27;hosts&#x27;: [&#x27;redis://localhost:6379/1&#x27;]}}}</pre></td>
+          </tr>
+
+          <tr>
+            <td>CORS_ALLOWED_ORIGINS</td>
+            <td class="code"><pre>[&#x27;http://localhost:3000&#x27;,
+ &#x27;http://localhost:5173&#x27;,
+ &#x27;http://127.0.0.1:5500&#x27;,
+ &#x27;https://api.yamltech.com&#x27;,
+ &#x27;api.yamltech.com&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>CORS_ALLOW_CREDENTIALS</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>CORS_ALLOW_HEADERS</td>
+            <td class="code"><pre>[&#x27;accept&#x27;,
+ &#x27;accept-encoding&#x27;,
+ &#x27;authorization&#x27;,
+ &#x27;content-type&#x27;,
+ &#x27;dnt&#x27;,
+ &#x27;origin&#x27;,
+ &#x27;user-agent&#x27;,
+ &#x27;x-csrftoken&#x27;,
+ &#x27;x-requested-with&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>CORS_ALLOW_METHODS</td>
+            <td
+              class="code"><pre>[&#x27;DELETE&#x27;, &#x27;GET&#x27;, &#x27;OPTIONS&#x27;, &#x27;PATCH&#x27;, &#x27;POST&#x27;, &#x27;PUT&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>CORS_ORIGIN_ALLOW_ALL</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_AGE</td>
+            <td class="code"><pre>31449600</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_DOMAIN</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_HTTPONLY</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_MASKED</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_NAME</td>
+            <td class="code"><pre>&#x27;csrftoken&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_PATH</td>
+            <td class="code"><pre>&#x27;/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_SAMESITE</td>
+            <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_COOKIE_SECURE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_FAILURE_VIEW</td>
+            <td
+              class="code"><pre>&#x27;django.views.csrf.csrf_failure&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_HEADER_NAME</td>
+            <td class="code"><pre>&#x27;HTTP_X_CSRF_TOKEN&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_TRUSTED_ORIGINS</td>
+            <td
+              class="code"><pre>[&#x27;https://api.yamltech.com&#x27;, &#x27;api.yamltech.com&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>CSRF_USE_SESSIONS</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATABASES</td>
+            <td
+              class="code"><pre>{&#x27;default&#x27;: {&#x27;ATOMIC_REQUESTS&#x27;: False,
+             &#x27;AUTOCOMMIT&#x27;: True,
+             &#x27;CONN_HEALTH_CHECKS&#x27;: False,
+             &#x27;CONN_MAX_AGE&#x27;: 0,
+             &#x27;ENGINE&#x27;: &#x27;django.db.backends.sqlite3&#x27;,
+             &#x27;HOST&#x27;: &#x27;&#x27;,
+             &#x27;NAME&#x27;: PosixPath(&#x27;/home/ubuntu/cometakeBE/db.sqlite3&#x27;),
+             &#x27;OPTIONS&#x27;: {},
+             &#x27;PASSWORD&#x27;: &#x27;********************&#x27;,
+             &#x27;PORT&#x27;: &#x27;&#x27;,
+             &#x27;TEST&#x27;: {&#x27;CHARSET&#x27;: None,
+                      &#x27;COLLATION&#x27;: None,
+                      &#x27;MIGRATE&#x27;: True,
+                      &#x27;MIRROR&#x27;: None,
+                      &#x27;NAME&#x27;: None},
+             &#x27;TIME_ZONE&#x27;: None,
+             &#x27;USER&#x27;: &#x27;&#x27;}}</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATABASE_ROUTERS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATA_UPLOAD_MAX_MEMORY_SIZE</td>
+            <td class="code"><pre>2621440</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATA_UPLOAD_MAX_NUMBER_FIELDS</td>
+            <td class="code"><pre>1000</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATA_UPLOAD_MAX_NUMBER_FILES</td>
+            <td class="code"><pre>100</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATETIME_FORMAT</td>
+            <td class="code"><pre>&#x27;N j, Y, P&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATETIME_INPUT_FORMATS</td>
+            <td class="code"><pre>[&#x27;%Y-%m-%d %H:%M:%S&#x27;,
+ &#x27;%Y-%m-%d %H:%M:%S.%f&#x27;,
+ &#x27;%Y-%m-%d %H:%M&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%Y %H:%M&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%y %H:%M&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATE_FORMAT</td>
+            <td class="code"><pre>&#x27;N j, Y&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DATE_INPUT_FORMATS</td>
+            <td class="code"><pre>[&#x27;%d-%m-%Y&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEBUG</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>DECIMAL_SEPARATOR</td>
+            <td class="code"><pre>&#x27;.&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_AUTO_FIELD</td>
+            <td
+              class="code"><pre>&#x27;django.db.models.BigAutoField&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_CHARSET</td>
+            <td class="code"><pre>&#x27;utf-8&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_EXCEPTION_REPORTER</td>
+            <td
+              class="code"><pre>&#x27;django.views.debug.ExceptionReporter&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_EXCEPTION_REPORTER_FILTER</td>
+            <td
+              class="code"><pre>&#x27;django.views.debug.SafeExceptionReporterFilter&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_FILE_STORAGE</td>
+            <td
+              class="code"><pre>&#x27;django.core.files.storage.FileSystemStorage&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_FROM_EMAIL</td>
+            <td
+              class="code"><pre>&#x27;nwaforglory680@gmail.com&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_INDEX_TABLESPACE</td>
+            <td class="code"><pre>&#x27;&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DEFAULT_TABLESPACE</td>
+            <td class="code"><pre>&#x27;&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>DISALLOWED_USER_AGENTS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_BACKEND</td>
+            <td
+              class="code"><pre>&#x27;django.core.mail.backends.smtp.EmailBackend&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_HOST</td>
+            <td class="code"><pre>&#x27;host.docker.internal&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_HOST_PASSWORD</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_HOST_USER</td>
+            <td class="code"><pre>&#x27;null&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_PORT</td>
+            <td class="code"><pre>&#x27;1025&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_SSL_CERTFILE</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_SSL_KEYFILE</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_SUBJECT_PREFIX</td>
+            <td class="code"><pre>&#x27;[Django] &#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_TIMEOUT</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_USE_LOCALTIME</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_USE_SSL</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>EMAIL_USE_TLS</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>FACEBOOK_APP_ID</td>
+            <td class="code"><pre>&#x27;174127543886413&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>FILE_UPLOAD_DIRECTORY_PERMISSIONS</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>FILE_UPLOAD_HANDLERS</td>
+            <td
+              class="code"><pre>[&#x27;django.core.files.uploadhandler.MemoryFileUploadHandler&#x27;,
+ &#x27;django.core.files.uploadhandler.TemporaryFileUploadHandler&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+            <td class="code"><pre>2621440</pre></td>
+          </tr>
+
+          <tr>
+            <td>FILE_UPLOAD_PERMISSIONS</td>
+            <td class="code"><pre>420</pre></td>
+          </tr>
+
+          <tr>
+            <td>FILE_UPLOAD_TEMP_DIR</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>FIRST_DAY_OF_WEEK</td>
+            <td class="code"><pre>0</pre></td>
+          </tr>
+
+          <tr>
+            <td>FIXTURE_DIRS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>FORCE_SCRIPT_NAME</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>FORMAT_MODULE_PATH</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>FORM_RENDERER</td>
+            <td
+              class="code"><pre>&#x27;django.forms.renderers.DjangoTemplates&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>GOOGLE_CLIENT_ID</td>
+            <td
+              class="code"><pre>&#x27;456249570232-g52u7sg2d6brdugelfju6k2jitjmrdbd.apps.googleusercontent.com&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>IGNORABLE_404_URLS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>INSTALLED_APPS</td>
+            <td class="code"><pre>[&#x27;django.contrib.admin&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;,
+ &#x27;api.apps.ApiConfig&#x27;,
+ &#x27;core.apps.CoreConfig&#x27;,
+ &#x27;support&#x27;,
+ &#x27;drf_yasg&#x27;,
+ &#x27;rest_framework&#x27;,
+ &#x27;rest_framework.authtoken&#x27;,
+ &#x27;rest_framework_simplejwt&#x27;,
+ &#x27;corsheaders&#x27;,
+ &#x27;daphne&#x27;,
+ &#x27;channels&#x27;,
+ &#x27;django_redis&#x27;,
+ &#x27;django_otp&#x27;,
+ &#x27;django_otp.plugins.otp_totp&#x27;,
+ &#x27;minio_storage&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>INTERNAL_IPS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>IN_PROD</td>
+            <td class="code"><pre>&#x27;True&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGES</td>
+            <td class="code"><pre>[(&#x27;af&#x27;, &#x27;Afrikaans&#x27;),
+ (&#x27;ar&#x27;, &#x27;Arabic&#x27;),
+ (&#x27;ar-dz&#x27;, &#x27;Algerian Arabic&#x27;),
+ (&#x27;ast&#x27;, &#x27;Asturian&#x27;),
+ (&#x27;az&#x27;, &#x27;Azerbaijani&#x27;),
+ (&#x27;bg&#x27;, &#x27;Bulgarian&#x27;),
+ (&#x27;be&#x27;, &#x27;Belarusian&#x27;),
+ (&#x27;bn&#x27;, &#x27;Bengali&#x27;),
+ (&#x27;br&#x27;, &#x27;Breton&#x27;),
+ (&#x27;bs&#x27;, &#x27;Bosnian&#x27;),
+ (&#x27;ca&#x27;, &#x27;Catalan&#x27;),
+ (&#x27;ckb&#x27;, &#x27;Central Kurdish (Sorani)&#x27;),
+ (&#x27;cs&#x27;, &#x27;Czech&#x27;),
+ (&#x27;cy&#x27;, &#x27;Welsh&#x27;),
+ (&#x27;da&#x27;, &#x27;Danish&#x27;),
+ (&#x27;de&#x27;, &#x27;German&#x27;),
+ (&#x27;dsb&#x27;, &#x27;Lower Sorbian&#x27;),
+ (&#x27;el&#x27;, &#x27;Greek&#x27;),
+ (&#x27;en&#x27;, &#x27;English&#x27;),
+ (&#x27;en-au&#x27;, &#x27;Australian English&#x27;),
+ (&#x27;en-gb&#x27;, &#x27;British English&#x27;),
+ (&#x27;eo&#x27;, &#x27;Esperanto&#x27;),
+ (&#x27;es&#x27;, &#x27;Spanish&#x27;),
+ (&#x27;es-ar&#x27;, &#x27;Argentinian Spanish&#x27;),
+ (&#x27;es-co&#x27;, &#x27;Colombian Spanish&#x27;),
+ (&#x27;es-mx&#x27;, &#x27;Mexican Spanish&#x27;),
+ (&#x27;es-ni&#x27;, &#x27;Nicaraguan Spanish&#x27;),
+ (&#x27;es-ve&#x27;, &#x27;Venezuelan Spanish&#x27;),
+ (&#x27;et&#x27;, &#x27;Estonian&#x27;),
+ (&#x27;eu&#x27;, &#x27;Basque&#x27;),
+ (&#x27;fa&#x27;, &#x27;Persian&#x27;),
+ (&#x27;fi&#x27;, &#x27;Finnish&#x27;),
+ (&#x27;fr&#x27;, &#x27;French&#x27;),
+ (&#x27;fy&#x27;, &#x27;Frisian&#x27;),
+ (&#x27;ga&#x27;, &#x27;Irish&#x27;),
+ (&#x27;gd&#x27;, &#x27;Scottish Gaelic&#x27;),
+ (&#x27;gl&#x27;, &#x27;Galician&#x27;),
+ (&#x27;he&#x27;, &#x27;Hebrew&#x27;),
+ (&#x27;hi&#x27;, &#x27;Hindi&#x27;),
+ (&#x27;hr&#x27;, &#x27;Croatian&#x27;),
+ (&#x27;hsb&#x27;, &#x27;Upper Sorbian&#x27;),
+ (&#x27;hu&#x27;, &#x27;Hungarian&#x27;),
+ (&#x27;hy&#x27;, &#x27;Armenian&#x27;),
+ (&#x27;ia&#x27;, &#x27;Interlingua&#x27;),
+ (&#x27;id&#x27;, &#x27;Indonesian&#x27;),
+ (&#x27;ig&#x27;, &#x27;Igbo&#x27;),
+ (&#x27;io&#x27;, &#x27;Ido&#x27;),
+ (&#x27;is&#x27;, &#x27;Icelandic&#x27;),
+ (&#x27;it&#x27;, &#x27;Italian&#x27;),
+ (&#x27;ja&#x27;, &#x27;Japanese&#x27;),
+ (&#x27;ka&#x27;, &#x27;Georgian&#x27;),
+ (&#x27;kab&#x27;, &#x27;Kabyle&#x27;),
+ (&#x27;kk&#x27;, &#x27;Kazakh&#x27;),
+ (&#x27;km&#x27;, &#x27;Khmer&#x27;),
+ (&#x27;kn&#x27;, &#x27;Kannada&#x27;),
+ (&#x27;ko&#x27;, &#x27;Korean&#x27;),
+ (&#x27;ky&#x27;, &#x27;Kyrgyz&#x27;),
+ (&#x27;lb&#x27;, &#x27;Luxembourgish&#x27;),
+ (&#x27;lt&#x27;, &#x27;Lithuanian&#x27;),
+ (&#x27;lv&#x27;, &#x27;Latvian&#x27;),
+ (&#x27;mk&#x27;, &#x27;Macedonian&#x27;),
+ (&#x27;ml&#x27;, &#x27;Malayalam&#x27;),
+ (&#x27;mn&#x27;, &#x27;Mongolian&#x27;),
+ (&#x27;mr&#x27;, &#x27;Marathi&#x27;),
+ (&#x27;ms&#x27;, &#x27;Malay&#x27;),
+ (&#x27;my&#x27;, &#x27;Burmese&#x27;),
+ (&#x27;nb&#x27;, &#x27;Norwegian Bokmål&#x27;),
+ (&#x27;ne&#x27;, &#x27;Nepali&#x27;),
+ (&#x27;nl&#x27;, &#x27;Dutch&#x27;),
+ (&#x27;nn&#x27;, &#x27;Norwegian Nynorsk&#x27;),
+ (&#x27;os&#x27;, &#x27;Ossetic&#x27;),
+ (&#x27;pa&#x27;, &#x27;Punjabi&#x27;),
+ (&#x27;pl&#x27;, &#x27;Polish&#x27;),
+ (&#x27;pt&#x27;, &#x27;Portuguese&#x27;),
+ (&#x27;pt-br&#x27;, &#x27;Brazilian Portuguese&#x27;),
+ (&#x27;ro&#x27;, &#x27;Romanian&#x27;),
+ (&#x27;ru&#x27;, &#x27;Russian&#x27;),
+ (&#x27;sk&#x27;, &#x27;Slovak&#x27;),
+ (&#x27;sl&#x27;, &#x27;Slovenian&#x27;),
+ (&#x27;sq&#x27;, &#x27;Albanian&#x27;),
+ (&#x27;sr&#x27;, &#x27;Serbian&#x27;),
+ (&#x27;sr-latn&#x27;, &#x27;Serbian Latin&#x27;),
+ (&#x27;sv&#x27;, &#x27;Swedish&#x27;),
+ (&#x27;sw&#x27;, &#x27;Swahili&#x27;),
+ (&#x27;ta&#x27;, &#x27;Tamil&#x27;),
+ (&#x27;te&#x27;, &#x27;Telugu&#x27;),
+ (&#x27;tg&#x27;, &#x27;Tajik&#x27;),
+ (&#x27;th&#x27;, &#x27;Thai&#x27;),
+ (&#x27;tk&#x27;, &#x27;Turkmen&#x27;),
+ (&#x27;tr&#x27;, &#x27;Turkish&#x27;),
+ (&#x27;tt&#x27;, &#x27;Tatar&#x27;),
+ (&#x27;udm&#x27;, &#x27;Udmurt&#x27;),
+ (&#x27;uk&#x27;, &#x27;Ukrainian&#x27;),
+ (&#x27;ur&#x27;, &#x27;Urdu&#x27;),
+ (&#x27;uz&#x27;, &#x27;Uzbek&#x27;),
+ (&#x27;vi&#x27;, &#x27;Vietnamese&#x27;),
+ (&#x27;zh-hans&#x27;, &#x27;Simplified Chinese&#x27;),
+ (&#x27;zh-hant&#x27;, &#x27;Traditional Chinese&#x27;)]</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGES_BIDI</td>
+            <td
+              class="code"><pre>[&#x27;he&#x27;, &#x27;ar&#x27;, &#x27;ar-dz&#x27;, &#x27;ckb&#x27;, &#x27;fa&#x27;, &#x27;ur&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_CODE</td>
+            <td class="code"><pre>&#x27;en-us&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_AGE</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_DOMAIN</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_HTTPONLY</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_NAME</td>
+            <td class="code"><pre>&#x27;django_language&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_PATH</td>
+            <td class="code"><pre>&#x27;/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_SAMESITE</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>LANGUAGE_COOKIE_SECURE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOCALE_PATHS</td>
+            <td
+              class="code"><pre>(&#x27;/home/ubuntu/cometakeBE/locale&#x27;,)</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOGGING</td>
+            <td class="code"><pre>{&#x27;disable_existing_loggers&#x27;: False,
+ &#x27;filters&#x27;: {&#x27;require_debug_true&#x27;: {&#x27;()&#x27;: &#x27;django.utils.log.RequireDebugTrue&#x27;}},
+ &#x27;formatters&#x27;: {&#x27;simple&#x27;: {&#x27;format&#x27;: &#x27;{levelname} {message}&#x27;, &#x27;style&#x27;: &#x27;{&#x27;},
+                &#x27;verbose&#x27;: {&#x27;format&#x27;: &#x27;{levelname} {asctime} {module} &#x27;
+                                      &#x27;{message}&#x27;,
+                            &#x27;style&#x27;: &#x27;{&#x27;}},
+ &#x27;handlers&#x27;: {&#x27;error_file&#x27;: {&#x27;class&#x27;: &#x27;logging.FileHandler&#x27;,
+                             &#x27;filename&#x27;: &#x27;/home/ubuntu/cometakeBE/storage/logs/error.log&#x27;,
+                             &#x27;formatter&#x27;: &#x27;verbose&#x27;,
+                             &#x27;level&#x27;: &#x27;ERROR&#x27;},
+              &#x27;info_file&#x27;: {&#x27;class&#x27;: &#x27;logging.FileHandler&#x27;,
+                            &#x27;filename&#x27;: &#x27;/home/ubuntu/cometakeBE/storage/logs/application.log&#x27;,
+                            &#x27;filters&#x27;: [&#x27;require_debug_true&#x27;],
+                            &#x27;formatter&#x27;: &#x27;simple&#x27;,
+                            &#x27;level&#x27;: &#x27;INFO&#x27;}},
+ &#x27;loggers&#x27;: {&#x27;cometake&#x27;: {&#x27;handlers&#x27;: [&#x27;info_file&#x27;, &#x27;error_file&#x27;],
+                          &#x27;propagate&#x27;: True}},
+ &#x27;version&#x27;: 1}</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOGGING_CONFIG</td>
+            <td
+              class="code"><pre>&#x27;logging.config.dictConfig&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOGIN_REDIRECT_URL</td>
+            <td class="code"><pre>&#x27;/accounts/profile/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOGIN_URL</td>
+            <td class="code"><pre>&#x27;/accounts/login/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>LOGOUT_REDIRECT_URL</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>MAINTENANCE_MODE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>MANAGERS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>MEDIA_ROOT</td>
+            <td
+              class="code"><pre>PosixPath(&#x27;/home/ubuntu/cometakeBE/media&#x27;)</pre></td>
+          </tr>
+
+          <tr>
+            <td>MEDIA_URL</td>
+            <td class="code"><pre>&#x27;/media/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>MESSAGE_STORAGE</td>
+            <td
+              class="code"><pre>&#x27;django.contrib.messages.storage.fallback.FallbackStorage&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>MIDDLEWARE</td>
+            <td
+              class="code"><pre>[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;corsheaders.middleware.CorsMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django_otp.middleware.OTPMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;,
+ &#x27;api.middlewares.user.UpdateLastSeenMiddleware&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>MIGRATION_MODULES</td>
+            <td class="code"><pre>{}</pre></td>
+          </tr>
+
+          <tr>
+            <td>MONTH_DAY_FORMAT</td>
+            <td class="code"><pre>&#x27;F j&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>NUMBER_GROUPING</td>
+            <td class="code"><pre>0</pre></td>
+          </tr>
+
+          <tr>
+            <td>PASSWORD_HASHERS</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>PASSWORD_RESET_TIMEOUT</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>PREPEND_WWW</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>REST_FRAMEWORK</td>
+            <td
+              class="code"><pre>{&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;: (&#x27;rest_framework.authentication.TokenAuthentication&#x27;,
+                                    &#x27;rest_framework.authentication.SessionAuthentication&#x27;,
+                                    &#x27;rest_framework_simplejwt.authentication.JWTAuthentication&#x27;),
+ &#x27;DEFAULT_PAGINATION_CLASS&#x27;: &#x27;rest_framework.pagination.LimitOffsetPagination&#x27;,
+ &#x27;DEFAULT_PERMISSION_CLASSES&#x27;: (&#x27;rest_framework.permissions.IsAuthenticated&#x27;,),
+ &#x27;PAGE_SIZE&#x27;: 50}</pre></td>
+          </tr>
+
+          <tr>
+            <td>REST_USE_JWT</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>ROOT_URLCONF</td>
+            <td class="code"><pre>&#x27;backend.urls&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECRET_KEY</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECRET_KEY_FALLBACKS</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_CONTENT_TYPE_NOSNIFF</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_CROSS_ORIGIN_OPENER_POLICY</td>
+            <td class="code"><pre>&#x27;same-origin&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_HSTS_INCLUDE_SUBDOMAINS</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_HSTS_PRELOAD</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_HSTS_SECONDS</td>
+            <td class="code"><pre>0</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_PROXY_SSL_HEADER</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_REDIRECT_EXEMPT</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_REFERRER_POLICY</td>
+            <td class="code"><pre>&#x27;same-origin&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_SSL_HOST</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>SECURE_SSL_REDIRECT</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SENDGRID_SANDBOX_MODE_IN_DEBUG</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SERVER_EMAIL</td>
+            <td class="code"><pre>&#x27;noreply@grampet.com&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_CACHE_ALIAS</td>
+            <td class="code"><pre>&#x27;default&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_AGE</td>
+            <td class="code"><pre>1209600</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_DOMAIN</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_HTTPONLY</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_NAME</td>
+            <td class="code"><pre>&#x27;sessionid&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_PATH</td>
+            <td class="code"><pre>&#x27;/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_SAMESITE</td>
+            <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_COOKIE_SECURE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_ENGINE</td>
+            <td
+              class="code"><pre>&#x27;django.contrib.sessions.backends.cache&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_FILE_PATH</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_SAVE_EVERY_REQUEST</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>SESSION_SERIALIZER</td>
+            <td
+              class="code"><pre>&#x27;django.contrib.sessions.serializers.JSONSerializer&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SETTINGS_MODULE</td>
+            <td class="code"><pre>&#x27;backend.settings&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SHORT_DATETIME_FORMAT</td>
+            <td class="code"><pre>&#x27;m/d/Y P&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SHORT_DATE_FORMAT</td>
+            <td class="code"><pre>&#x27;m/d/Y&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SIGNING_BACKEND</td>
+            <td
+              class="code"><pre>&#x27;django.core.signing.TimestampSigner&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>SILENCED_SYSTEM_CHECKS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>SIMPLE_JWT</td>
+            <td
+              class="code"><pre>{&#x27;ACCESS_TOKEN_LIFETIME&#x27;: &#x27;********************&#x27;,
+ &#x27;ALGORITHM&#x27;: &#x27;HS256&#x27;,
+ &#x27;AUDIENCE&#x27;: None,
+ &#x27;AUTH_HEADER_NAME&#x27;: &#x27;HTTP_AUTHORIZATION&#x27;,
+ &#x27;AUTH_HEADER_TYPES&#x27;: (&#x27;Bearer&#x27;,),
+ &#x27;AUTH_TOKEN_CLASSES&#x27;: &#x27;********************&#x27;,
+ &#x27;BLACKLIST_AFTER_ROTATION&#x27;: False,
+ &#x27;ISSUER&#x27;: None,
+ &#x27;JTI_CLAIM&#x27;: &#x27;jti&#x27;,
+ &#x27;JWK_URL&#x27;: None,
+ &#x27;LEEWAY&#x27;: 0,
+ &#x27;REFRESH_TOKEN_LIFETIME&#x27;: &#x27;********************&#x27;,
+ &#x27;ROTATE_REFRESH_TOKENS&#x27;: &#x27;********************&#x27;,
+ &#x27;SIGNING_KEY&#x27;: &#x27;********************&#x27;,
+ &#x27;SLIDING_TOKEN_LIFETIME&#x27;: &#x27;********************&#x27;,
+ &#x27;SLIDING_TOKEN_REFRESH_EXP_CLAIM&#x27;: &#x27;********************&#x27;,
+ &#x27;SLIDING_TOKEN_REFRESH_LIFETIME&#x27;: &#x27;********************&#x27;,
+ &#x27;TOKEN_TYPE_CLAIM&#x27;: &#x27;********************&#x27;,
+ &#x27;TOKEN_USER_CLASS&#x27;: &#x27;********************&#x27;,
+ &#x27;UPDATE_LAST_LOGIN&#x27;: False,
+ &#x27;USER_AUTHENTICATION_RULE&#x27;: &#x27;rest_framework_simplejwt.authentication.default_user_authentication_rule&#x27;,
+ &#x27;USER_ID_CLAIM&#x27;: &#x27;user_id&#x27;,
+ &#x27;USER_ID_FIELD&#x27;: &#x27;id&#x27;,
+ &#x27;VERIFYING_KEY&#x27;: &#x27;********************&#x27;}</pre></td>
+          </tr>
+
+          <tr>
+            <td>STATICFILES_DIRS</td>
+            <td
+              class="code"><pre>[PosixPath(&#x27;/home/ubuntu/cometakeBE/static&#x27;)]</pre></td>
+          </tr>
+
+          <tr>
+            <td>STATICFILES_FINDERS</td>
+            <td
+              class="code"><pre>[&#x27;django.contrib.staticfiles.finders.FileSystemFinder&#x27;,
+ &#x27;django.contrib.staticfiles.finders.AppDirectoriesFinder&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>STATICFILES_STORAGE</td>
+            <td
+              class="code"><pre>&#x27;django.contrib.staticfiles.storage.StaticFilesStorage&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>STATIC_ROOT</td>
+            <td class="code"><pre>None</pre></td>
+          </tr>
+
+          <tr>
+            <td>STATIC_URL</td>
+            <td class="code"><pre>&#x27;/static/&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>STORAGES</td>
+            <td
+              class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;storages.backends.s3boto3.S3Boto3Storage&#x27;},
+ &#x27;staticfiles&#x27;: {&#x27;BACKEND&#x27;: &#x27;storages.backends.s3boto3.S3Boto3Storage&#x27;}}</pre></td>
+          </tr>
+
+          <tr>
+            <td>TEMPLATES</td>
+            <td class="code"><pre>[{&#x27;APP_DIRS&#x27;: True,
+  &#x27;BACKEND&#x27;: &#x27;django.template.backends.django.DjangoTemplates&#x27;,
+  &#x27;DIRS&#x27;: [PosixPath(&#x27;/home/ubuntu/cometakeBE/templates&#x27;)],
+  &#x27;OPTIONS&#x27;: {&#x27;context_processors&#x27;: [&#x27;django.template.context_processors.debug&#x27;,
+                                     &#x27;django.template.context_processors.request&#x27;,
+                                     &#x27;django.contrib.auth.context_processors.auth&#x27;,
+                                     &#x27;django.contrib.messages.context_processors.messages&#x27;]}}]</pre></td>
+          </tr>
+
+          <tr>
+            <td>TEST_NON_SERIALIZED_APPS</td>
+            <td class="code"><pre>[]</pre></td>
+          </tr>
+
+          <tr>
+            <td>TEST_RUNNER</td>
+            <td
+              class="code"><pre>&#x27;django.test.runner.DiscoverRunner&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>THOUSAND_SEPARATOR</td>
+            <td class="code"><pre>&#x27;,&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>TIME_FORMAT</td>
+            <td class="code"><pre>&#x27;P&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>TIME_INPUT_FORMATS</td>
+            <td
+              class="code"><pre>[&#x27;%H:%M:%S&#x27;, &#x27;%H:%M:%S.%f&#x27;, &#x27;%H:%M&#x27;]</pre></td>
+          </tr>
+
+          <tr>
+            <td>TIME_ZONE</td>
+            <td class="code"><pre>&#x27;UTC&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_DEPRECATED_PYTZ</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_I18N</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_L10N</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_THOUSAND_SEPARATOR</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_TZ</td>
+            <td class="code"><pre>True</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_X_FORWARDED_HOST</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>USE_X_FORWARDED_PORT</td>
+            <td class="code"><pre>False</pre></td>
+          </tr>
+
+          <tr>
+            <td>VTU_API_KEY</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>VTU_BASE_URL</td>
+            <td
+              class="code"><pre>&#x27;https://sandbox.vtpass.com/api&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>VTU_PUBLIC_KEY</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>VTU_SECRET_KEY</td>
+            <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>WSGI_APPLICATION</td>
+            <td
+              class="code"><pre>&#x27;backend.wsgi.application&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>X_FRAME_OPTIONS</td>
+            <td class="code"><pre>&#x27;DENY&#x27;</pre></td>
+          </tr>
+
+          <tr>
+            <td>YEAR_MONTH_FORMAT</td>
+            <td class="code"><pre>&#x27;F Y&#x27;</pre></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="explanation">
+      <p>
+        You’re seeing this error because you have <code>DEBUG = True</code> in
+        your
+        Django settings file. Change that to <code>False</code>, and Django will
+        display a standard page generated by the handler for this status code.
+      </p>
+    </div>
+
+  </body>
+</html>

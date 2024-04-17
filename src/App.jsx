@@ -12,7 +12,8 @@ import Categories from './pages/Category/Categories'
 
 function App() {
 
-  const baseUrl = 'https://cometake.pythonanywhere.com/administrator'
+  // const baseUrl = 'https://cometake.pythonanywhere.com/administrator'
+  const baseUrl = 'https://api.yamltech.com/admin/'
   const admin = JSON.parse(localStorage.getItem('admin'))
 
   return (

@@ -110,7 +110,6 @@ const Customers = ({baseUrl}) => {
                     </tr>
                   ))
                 }
-              {/* https://cometake.pythonanywhere.com/administrator/dashboard/customer/{user_id} */}
               </tbody>
           </table>
       </div>

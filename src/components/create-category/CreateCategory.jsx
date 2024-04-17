@@ -9,7 +9,7 @@ const CreateCategory = ({setShowCategory}) => {
 
     async function createCategory(){
         setLoading(true)
-        const res = await fetch(`https://cometake.pythonanywhere.com/administrator/dashboard/add-category`,{
+        const res = await fetch(`https://api.yamltech.com/admin/dashboard/add-category`,{
             method:"POST",
             headers:{
                 Authorization:`Bearer ${admin.data[0].access}`,
