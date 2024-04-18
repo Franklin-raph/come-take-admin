@@ -11,12 +11,14 @@ const Customers = ({baseUrl}) => {
   const [allCustomers, setAllCustomers] = useState([])
 
   async function getAllCustomers(){
+    console.log(admin.data[0].access ,`${baseUrl}/dashboard/all-customers`);
     const res = await fetch(`${baseUrl}/dashboard/all-customers`,{
       headers:{
         Authorization:`Bearer ${admin.data[0].access}`
       }
     })
     const data = await res.json()
+    console.log(data);
     if(res.ok){
       setAllCustomers(data.data)
     }
