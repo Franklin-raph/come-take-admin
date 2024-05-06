@@ -23,8 +23,9 @@ const SingleCustomer = ({baseUrl}) => {
     }
 
     async function acceptSeller(){
+        console.log(`${baseUrl}/dashboard/customer/${id}`);
         setLoading(true)
-        const res = await fetch(`https://api.yamltech.com/admin/dashboard/customer/${id}`,{
+        const res = await fetch(`${baseUrl}/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
                 'Content-Type':'application/json',
@@ -43,7 +44,7 @@ const SingleCustomer = ({baseUrl}) => {
 
     async function rejectSeller(){
         setLoading(true)
-        const res = await fetch(`https://api.yamltech.com/admin/dashboard/customer/${id}`,{
+        const res = await fetch(`${baseUrl}/dashboard/customer/${id}`,{
             method:"PUT",
             headers:{
                 'Content-Type':'application/json',

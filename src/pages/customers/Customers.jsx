@@ -20,7 +20,7 @@ const Customers = ({baseUrl}) => {
     const data = await res.json()
     console.log(data);
     if(res.ok){
-      setAllCustomers(data.data)
+      setAllCustomers(data.data.reverse())
     }
     console.log(res, data);
   }
