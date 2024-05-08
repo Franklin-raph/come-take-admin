@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CreateCategory from '../../components/create-category/CreateCategory'
+import { HiOutlineTrash } from "react-icons/hi2";
+import { GoPencil } from "react-icons/go";
 
 const Categories = () => {
 
@@ -33,7 +35,14 @@ const Categories = () => {
         </div>
         {
             allCategory && allCategory.map(category => (
-                <p className='my-3 cursor-pointer hover:text-gray-500'>{category.name}</p>
+                <div className='flex items-center justify-between border-b'>
+                    <p className='my-3 cursor-pointer hover:text-gray-500'>{category.name}</p>
+                    <div className="flex items-center gap-2">
+                        <GoPencil className='text-yellow-500 cursor-pointer'/>
+                        <p>Or</p>
+                        <HiOutlineTrash className='text-red-500 cursor-pointer'/>
+                    </div>
+                </div>
             ))
         }
         {
