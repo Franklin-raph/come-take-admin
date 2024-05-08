@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Transactions = () => {
 
   const transactionsArray = ['All', 'Confirmed', 'Pending', 'Failed']
+
+  const admin = JSON.parse(localStorage.getItem('admin'))
+  const [allTransactions, setAllTransactions] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  async function getAllTransactions(){
+    const res = await fetch(`https://api.yamltech.com/administrator/dashboard/transactions`,{
+      headers:{
+        Authorization:`Bearer ${admin.data[0].access}`
+      }
+    })
+    const data = await res.json()
+    setAllTransactions(data.data)
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getAllTransactions()
+  },[])
 
   return (
     <div className='shadow bg-white rounded-[20px] p-[30px]'>

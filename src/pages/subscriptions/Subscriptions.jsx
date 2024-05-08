@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import CreateSub from '../../components/create-sub/CreateSub'
+import { HiOutlineTrash } from "react-icons/hi2";
+import { GoPencil } from "react-icons/go";
+
 
 const Subscriptions = () => {
 
@@ -48,12 +51,15 @@ const Subscriptions = () => {
                       <th scope="col" class="px-6 py-3">
                           No of Product to upload/month
                       </th>
+                      <th scope="col" class="px-6 py-3">
+                          Action
+                      </th>
                   </tr>
               </thead>
               <tbody>
                 {
                   allSubs.map((sub, index) => (
-                      <tr class="bg-white border-b cursor-pointer">
+                      <tr class="bg-white border-b">
                           <td class="pl-3 pr-6 py-4">
                             {index+1}
                           </td>
@@ -68,6 +74,11 @@ const Subscriptions = () => {
                           </td>
                           <td class='px-6 py-4 capitalize'>
                             {sub.no_of_product_upload_per_month}
+                          </td>
+                          <td  class='px-6 py-4 capitalize flex items-center gap-5'>
+                            <GoPencil className='text-yellow-500 cursor-pointer'/>
+                            <p>Or</p>
+                            <HiOutlineTrash className='text-red-500 cursor-pointer'/>
                           </td>
                       </tr>
                   ))

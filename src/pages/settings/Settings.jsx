@@ -10,7 +10,7 @@ const Settings = ({baseUrl}) => {
   const [last_name, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const tab = ['Profile', 'Password', 'Notification']
+  const tab = ['Profile', 'Password']
   const [selectedTab, setSelectedTab] = useState(tab[0])
 
   const [passwordType, setPasswordType] = useState("password")
@@ -179,8 +179,8 @@ const Settings = ({baseUrl}) => {
           </div>
       }
 
-      {
-        selectedTab === 'Notification' &&
+      {/* {
+        selectedTab == 'Notification' &&
           <div className='w-[75%] flex items-center justify-center flex-col'>
             <div className="relative input-container mt-4 w-[60%] flex justify-between items-center">
               <p>Receive email notifications</p>
@@ -223,7 +223,7 @@ const Settings = ({baseUrl}) => {
                     <input type="checkbox" value="" class="sr-only peer" onChange={() => setNotificationSound(true)} />
                     <div class="relative w-11 h-6 bg-[#b8b8b8] peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
                 </label>
-                  {/* {
+                  {
                       notificationSound === true ?
                       <label class="inline-flex items-center cursor-pointer">
                           <input type="checkbox" value="" class="sr-only peer" onChange={() => setNotificationSound(true)} />
@@ -234,7 +234,7 @@ const Settings = ({baseUrl}) => {
                           <input type="checkbox" value="" class="sr-only peer" onChange={() => setNotificationSound(true)} />
                           <div class="relative w-11 h-6 bg-[#b8b8b8] peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#96BF47]"></div>
                       </label>
-                  } */}
+                  }
               </div>
             </div>
             <div className='flex justify-between w-[71%] mt-[3rem]'>
@@ -242,7 +242,7 @@ const Settings = ({baseUrl}) => {
               <button className='bg-[#9C9C9C] text-white block py-2 px-10 rounded-full' onClick={updateNotification}>Save Changes</button>
             </div>
           </div>
-      }
+      } */}
 
     </div>
   )

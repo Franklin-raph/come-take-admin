@@ -28,12 +28,12 @@ const Categories = () => {
   return (
     <div>
         <div className='flex items-center justify-between mb-5'>
-            <p>Available Subscriptions</p>
+            <p>Available Categories</p>
             <button className='bg-primary-color text-white px-3 py-1 rounded-full' onClick={() => setShowCategory(true)}>Create New Category</button>
         </div>
         {
             allCategory && allCategory.map(category => (
-                <p className='my-1 cursor-pointer'>{category.name}</p>
+                <p className='my-3 cursor-pointer hover:text-gray-500'>{category.name}</p>
             ))
         }
         {
