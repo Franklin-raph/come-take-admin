@@ -1,9 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CreateSub from '../../components/create-sub/CreateSub'
 
 const Subscriptions = () => {
 
     const [showSub, setShowSub] = useState('')
+    const admin = JSON.parse(localStorage.getItem('admin'))
+    const [allSubs, setAllSubs] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    async function getAllSubs(){
+      const res = await fetch(`https://api.yamltech.com/subscription/plans`,{
+        headers:{
+          Authorization:`Bearer ${admin.data[0].access}`
+        }
+      })
+      const data = await res.json()
+      setAllSubs(data.data)
+      console.log(data)
+    }
+
+    useEffect(() => {
+      getAllSubs()
+    },[])
+    
   return (
     <div>
         <div className='flex items-center justify-between'>
@@ -15,74 +34,44 @@ const Subscriptions = () => {
               <thead class="text-[14px] text-[#5C5C5C] capitalize border-b">
                   <tr>
                       <th scope="col" class="pl-3 pr-6 py-3">
-                          Customers
+                          S/N
                       </th>
                       <th scope="col" class="px-6 py-3">
-                          Status
+                          Plan Title
                       </th>
                       <th scope="col" class="px-6 py-3">
-                          Date
+                          Plan Price
                       </th>
                       <th scope="col" class="px-6 py-3">
-                          Amount
+                          Plan Description
                       </th>
                       <th scope="col" class="px-6 py-3">
-                          MOP
+                          No of Product to upload/month
                       </th>
                   </tr>
               </thead>
               <tbody>
-                  <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-green-300 py-1 px-6 text-green-700 rounded-full'>Confirmed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr>
-                  <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-green-300 py-1 px-6 text-green-700 rounded-full'>Confirmed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr>
-                  <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-red-500 py-1 px-6 text-red-900 rounded-full'>Failed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr>
+                {
+                  allSubs.map((sub, index) => (
+                      <tr class="bg-white border-b cursor-pointer">
+                          <td class="pl-3 pr-6 py-4">
+                            {index+1}
+                          </td>
+                          <td class="px-6 py-4 capitalize">
+                            {sub.title}
+                          </td>
+                          <td class="px-6 py-4">
+                            N{sub.price}
+                          </td>
+                          <td class='px-6 py-4 capitalize'>
+                            {sub.plan_description}
+                          </td>
+                          <td class='px-6 py-4 capitalize'>
+                            {sub.no_of_product_upload_per_month}
+                          </td>
+                      </tr>
+                  ))
+                }
               </tbody>
           </table>
       </div>
