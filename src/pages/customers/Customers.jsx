@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Customers = ({baseUrl}) => {
 
-  const filterArray = ['All', 'Inactive', 'Active', 'Premium']
-  const [showCustomerDropDown, setShowCustomerDropDown] = useState(false)
+  const filterArray = ['All', 'Inactive', 'Active']
+  const [searchString, setSearchString] = useState('')
   const admin = JSON.parse(localStorage.getItem('admin'))
   const navigate = useNavigate()
   const [allCustomers, setAllCustomers] = useState([])
@@ -24,6 +24,8 @@ const Customers = ({baseUrl}) => {
     }
     console.log(res, data);
   }
+
+  console.log(allCustomers);
 
   useEffect(() =>{
     if(!admin){
@@ -44,8 +46,8 @@ const Customers = ({baseUrl}) => {
           }
         </div>
         <div className='mt-10'>
-          <p className='text-[#101010]'>Search by name</p>
-          <input className='border outline-none border-[#C8C8C8] px-2 py-[6px] mt-[6px] rounded text-[14px]' type="text" placeholder='Customer Name' />
+          <p className='text-[#101010]'>Search by name/email</p>
+          <input className='border outline-none border-[#C8C8C8] px-2 py-[6px] mt-[6px] rounded text-[14px]' onChange={e => setSearchString(e.target.value)} type="text" placeholder='Customer Name' />
         </div>
       </div>
 
@@ -75,11 +77,15 @@ const Customers = ({baseUrl}) => {
               </thead>
               <tbody>
                 {
-                  allCustomers && allCustomers.map(customer => (
+                  allCustomers && allCustomers.filter((customer) => {
+                    if (searchString === "") return customer
+                    else if (customer.first_name.toLowerCase().includes(searchString.toLowerCase()) 
+                              || customer.last_name.toLowerCase().includes(searchString.toLowerCase()) 
+                              || customer.last_name.toLowerCase().includes(searchString.toLowerCase())) return customer
+                }).map(customer => (
                     <tr class="bg-white border-b cursor-pointer" onClick={e => navigate(`/customer/${customer.id}`)}>
                         <td class="pl-3 pr-6 py-4">
                           {customer.first_name} {customer.last_name}
-                            {/* Microsoft Surface Pro */}
                         </td>
                         <td class="px-6 py-4">
                           {new Date(customer.date_joined).toDateString()}
