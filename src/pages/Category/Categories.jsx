@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import CreateCategory from '../../components/create-category/CreateCategory'
 import { HiOutlineTrash } from "react-icons/hi2";
 import { GoPencil } from "react-icons/go";
+import DeleteCategoryModal from '../../components/delete-category-modal/DeleteCategoryModal';
+import EditCategoryModal from '../../components/edit-category-modal/EditCategoryModal';
 
 const Categories = () => {
 
     const [showCategory, setShowCategory] = useState(false)
+    const [deleteCategoryModal, setDeleteCategoryModal] = useState(false)
+    const [editCategoryModal, setEditCategoryModal] = useState(false)
     const [allCategory, setAllCategory] = useState([])
     const admin = JSON.parse(localStorage.getItem('admin'))
 
@@ -37,16 +41,24 @@ const Categories = () => {
             allCategory && allCategory.map(category => (
                 <div className='flex items-center justify-between border-b'>
                     <p className='my-3 cursor-pointer hover:text-gray-500'>{category.name}</p>
-                    <div className="flex items-center gap-2">
-                        <GoPencil className='text-yellow-500 cursor-pointer'/>
-                        <p>Or</p>
-                        <HiOutlineTrash className='text-red-500 cursor-pointer'/>
+                    <div className="flex items-center gap-3">
+                        <GoPencil className='text-yellow-500 cursor-pointer' onClick={() => setEditCategoryModal(category)}/>
+                        <p className='text-gray-500 text-[14px]'>Or</p>
+                        <HiOutlineTrash className='text-red-500 cursor-pointer' onClick={() => setDeleteCategoryModal(category.id)}/>
                     </div>
                 </div>
             ))
         }
         {
             showCategory && <CreateCategory getAllCategories={getAllCategories} setShowCategory={setShowCategory}/>
+        }
+
+        {
+            deleteCategoryModal && <DeleteCategoryModal setDeleteCategoryModal={setDeleteCategoryModal} getAllCategories={getAllCategories} deleteCategoryModal={deleteCategoryModal}/>
+        }
+
+        {
+            editCategoryModal && <EditCategoryModal editCategoryModal={editCategoryModal} getAllCategories={getAllCategories} setEditCategoryModal={setEditCategoryModal}/>
         }
     </div>
   )

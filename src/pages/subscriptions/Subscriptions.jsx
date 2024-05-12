@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import CreateSub from '../../components/create-sub/CreateSub'
 import { HiOutlineTrash } from "react-icons/hi2";
 import { GoPencil } from "react-icons/go";
+import DeleteSubModal from '../../components/delete-sub-modal/DeleteSubModal';
+import EditSubModal from '../../components/edit-sub-modal/EditSubModal';
 
 
 const Subscriptions = () => {
@@ -9,7 +11,8 @@ const Subscriptions = () => {
     const [showSub, setShowSub] = useState('')
     const admin = JSON.parse(localStorage.getItem('admin'))
     const [allSubs, setAllSubs] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [editSubModal, setEditSubModal] = useState(false)
+    const [deleteSubModal, setDeleteSubModal] = useState(false)
 
     async function getAllSubs(){
       const res = await fetch(`https://api.yamltech.com/subscription/plans`,{
@@ -45,9 +48,9 @@ const Subscriptions = () => {
                       <th scope="col" class="px-6 py-3">
                           Plan Price
                       </th>
-                      <th scope="col" class="px-6 py-3">
+                      {/* <th scope="col" class="px-6 py-3">
                           Plan Description
-                      </th>
+                      </th> */}
                       <th scope="col" class="px-6 py-3">
                           No of Product to upload/month
                       </th>
@@ -69,16 +72,16 @@ const Subscriptions = () => {
                           <td class="px-6 py-4">
                             N{sub.price}
                           </td>
-                          <td class='px-6 py-4 capitalize'>
+                          {/* <td class='px-6 py-4 capitalize'>
                             {sub.plan_description}
-                          </td>
+                          </td> */}
                           <td class='px-6 py-4 capitalize'>
                             {sub.no_of_product_upload_per_month}
                           </td>
                           <td  class='px-6 py-4 capitalize flex items-center gap-5'>
-                            <GoPencil className='text-yellow-500 cursor-pointer'/>
+                            <GoPencil className='text-yellow-500 cursor-pointer' onClick={() => setEditSubModal(sub)}/>
                             <p>Or</p>
-                            <HiOutlineTrash className='text-red-500 cursor-pointer'/>
+                            <HiOutlineTrash className='text-red-500 cursor-pointer' onClick={() => setDeleteSubModal(sub.id)} />
                           </td>
                       </tr>
                   ))
@@ -87,7 +90,13 @@ const Subscriptions = () => {
           </table>
       </div>
       {
-        showSub && <CreateSub setShowSub={setShowSub}/>
+        showSub && <CreateSub setShowSub={setShowSub} getAllSubs={getAllSubs}/>
+      }
+      {
+        deleteSubModal && <DeleteSubModal setDeleteSubModal={setDeleteSubModal} deleteSubModal={deleteSubModal} getAllSubs={getAllSubs}/>
+      }
+      {
+        editSubModal && <EditSubModal getAllSubs={getAllSubs} editSubModal={editSubModal} setEditSubModal={setEditSubModal}/>
       }
     </div>
   )

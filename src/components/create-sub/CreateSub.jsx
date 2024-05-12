@@ -2,21 +2,29 @@ import React, { useState } from 'react'
 import { IoCloseSharp } from "react-icons/io5";
 
 
-const CreateSub = ({setShowSub}) => {
+const CreateSub = ({setShowSub, getAllSubs}) => {
 
     const [title, setTitle] = useState('')
     const [no_of_product_upload_per_month, setNoOfProductUploadPerMonth] = useState('')
     const [price, setPrice] = useState('')
-    const [plan_description, setPlanDescription] = useState('')
+    const [planDescription1, setPlanDescription1] = useState('')
+    const [planDescription2, setPlanDescription2] = useState('')
+    const [planDescription3, setPlanDescription3] = useState('')
     const admin = JSON.parse(localStorage.getItem('admin'))
     const [loading, setLoading] = useState(false)
 
     async function createSub(){
-        if(!price || !no_of_product_upload_per_month || !plan_description || !title){
+        if(!price || !no_of_product_upload_per_month || !title){
             alert("Please fill in all the fields")
         }else{
             setLoading(true)
-            const res = await fetch(`https://api.yamltech.com/admin/dashboard/create-subscription-plan`,{
+            const plan_description = [
+                { body: planDescription1 },
+                { body: planDescription2 },
+                { body: planDescription3 }
+            ]
+            console.log({title, no_of_product_upload_per_month, price, plan_description});
+            const res = await fetch(`https://api.yamltech.com/administrator/dashboard/create-subscription-plan`,{
                 method:"POST",
                 headers:{
                     Authorization:`Bearer ${admin.data[0].access}`,
@@ -28,9 +36,11 @@ const CreateSub = ({setShowSub}) => {
             if(res) setLoading(false)
             if(res.ok){
                 alert("Subscription was successfully created")
+                setShowSub(false)
+                getAllSubs()
             }
             if(!res.ok){
-                alert("An error occured, subscription was not created successfully")
+                alert(data.data.title)
             }
             console.log(res, data);
         }
@@ -53,8 +63,10 @@ const CreateSub = ({setShowSub}) => {
                 <input onChange={e => setNoOfProductUploadPerMonth(e.target.value)} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="10" style={{ border:"1.5px solid #CCCCCC" }}/>
             </div>
             <div className="w-full">
-                <p>Product Description</p>
-                <textarea cols="30" rows="5" onChange={e => setPlanDescription(e.target.value)} placeholder='Subscription Benefits' style={{ border:"1.5px solid #CCCCCC" }} className="mt-2 outline-none px-4 py-3 w-full rounded-[6px] placeholder:text-[#B6B6B6]"></textarea>
+                <p>Plan Description</p>
+                <input onChange={e => setPlanDescription1(e.target.value)} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 1" style={{ border:"1.5px solid #CCCCCC" }}/>
+                <input onChange={e => setPlanDescription2(e.target.value)} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 2" style={{ border:"1.5px solid #CCCCCC" }}/>
+                <input onChange={e => setPlanDescription3(e.target.value)} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 3" style={{ border:"1.5px solid #CCCCCC" }}/>
             </div>
             {
                 loading ? 

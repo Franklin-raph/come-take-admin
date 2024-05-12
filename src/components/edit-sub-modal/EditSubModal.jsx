@@ -1,0 +1,83 @@
+import React, { useState } from 'react'
+import { IoCloseSharp } from 'react-icons/io5'
+
+const EditSubModal = ({editSubModal, setEditSubModal, getAllSubs}) => {
+
+    console.log(editSubModal);
+
+    const [loading, setLoading] = useState(false)
+    const admin = JSON.parse(localStorage.getItem('admin'))
+    const [title, setTitle] = useState(editSubModal.title)
+    const [price, setPrice] = useState(editSubModal.price)
+    const [no_of_product_upload_per_month, setNoOfProductUploadPerMonth] = useState(editSubModal.no_of_product_upload_per_month)
+    const [planDescription1, setPlanDescription1] = useState(editSubModal.plan_description[0].body)
+    const [planDescription2, setPlanDescription2] = useState(editSubModal.plan_description[1].body)
+    const [planDescription3, setPlanDescription3] = useState(editSubModal.plan_description[2].body)
+
+    async function editSub(){
+        if(!price || !no_of_product_upload_per_month || !title){
+            alert("Please fill in all the fields")
+        }else{
+            setLoading(true)
+            const plan_description = [
+                { body: planDescription1 },
+                { body: planDescription2 },
+                { body: planDescription3 }
+            ]
+            console.log({title, no_of_product_upload_per_month, price, plan_description});
+            const res = await fetch(`https://api.yamltech.com/administrator/dashboard/subscription-plan/${editSubModal.id}`,{
+                method:"PUT",
+                headers:{
+                    Authorization:`Bearer ${admin.data[0].access}`,
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({title, no_of_product_upload_per_month, price, plan_description})
+            })
+            const data = await res.json()
+            if(res) setLoading(false)
+            if(res.ok){
+                alert("Subscription was successfully updated")
+                setEditSubModal(false)
+                getAllSubs()
+            }
+            if(!res.ok){
+                alert(data.data.title)
+            }
+            console.log(res, data);
+        }
+    }
+
+  return (
+    <div className='fixed top-0 left-0 h-full w-full z-[9999] flex items-center justify-center'  style={{ background:"rgba(14, 14, 14, 0.58)" }}>
+        <div className="flex items-end flex-col gap-5 mt-5 w-[50%] mx-auto bg-white py-3 px-6 rounded-[6px]">
+            <IoCloseSharp  onClick={() => setEditSubModal(false)} className='cursor-pointer '/>
+            <div className="w-full">
+                <p>Subscription Tile</p>
+                <input onChange={e => setTitle(e.target.value)} value={title} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Basic Plan" style={{ border:"1.5px solid #CCCCCC" }}/>
+            </div>
+            <div className="w-full">
+                <p>Price</p>
+                <input onChange={e => setPrice(e.target.value)} value={price} type="number" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="#32,000" style={{ border:"1.5px solid #CCCCCC" }}/>
+            </div>
+            <div className="w-full">
+                <p>Number of Product to be uploaded per month</p>
+                <input onChange={e => setNoOfProductUploadPerMonth(e.target.value)} value={no_of_product_upload_per_month} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="10" style={{ border:"1.5px solid #CCCCCC" }}/>
+            </div>
+            <div className="w-full">
+                <p>Plan Description</p>
+                <input onChange={e => setPlanDescription1(e.target.value)} value={planDescription1} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 1" style={{ border:"1.5px solid #CCCCCC" }}/>
+                <input onChange={e => setPlanDescription2(e.target.value)} value={planDescription2} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 2" style={{ border:"1.5px solid #CCCCCC" }}/>
+                <input onChange={e => setPlanDescription3(e.target.value)} value={planDescription3} type="text" className="mt-2 outline-none px-4 py-2 w-full rounded-[6px] placeholder:text-[#B6B6B6]" placeholder="Plan Description 3" style={{ border:"1.5px solid #CCCCCC" }}/>
+            </div>
+            {
+                loading ? 
+                <button className='bg-primary-color w-full text-white py-2 rounded-[6px] cursor-not-allowed'>Loading...</button>
+                :
+                <button onClick={editSub} className='bg-primary-color w-full text-white py-2 rounded-[6px]'>Update Subscription Plan</button>
+            }
+        </div>
+    </div>
+  )
+}
+
+export default EditSubModal
