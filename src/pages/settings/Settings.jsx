@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { GoEye } from "react-icons/go";
 import { GoEyeClosed } from "react-icons/go";
+import { CiUser } from "react-icons/ci";
+
 
 const Settings = ({baseUrl}) => {
 
@@ -82,7 +84,9 @@ const Settings = ({baseUrl}) => {
         selectedTab === 'Profile' &&
           <div className='w-[75%] flex items-center justify-center flex-col'>
             <div className='text-center text-[#5C5C5C]'>
-              <img src="/userimg.png" className='w-[100px] mb-2 mx-auto' alt="" />
+              <CiUser className='text-[70px] mx-auto mb-2' />
+
+              {/* <img src="/userimg.png" className='w-[100px] mb-2 mx-auto' alt="" /> */}
               <div className='font-[600] flex items-center justify-center gap-2'>
                 {
                   adminDetails && <p>{adminDetails.first_name}</p>
