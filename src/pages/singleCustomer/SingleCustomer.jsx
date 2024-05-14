@@ -170,16 +170,16 @@ const SingleCustomer = ({baseUrl}) => {
                         <p className='text-[#333333] text-[20px] font-[500] mt-2'>Others</p>
                         <div className='my-5'>
                             <p className='text-[#5C5C5C] font-[500]'>Store Address</p>
-                            <p className='text-[#B6B6B6]'>No 5 umuluo street ezinifite Mgdidi Ikom</p>
+                            <p className='text-[#B6B6B6]'>null</p>
                         </div>
                         <div className='flex items-center justify-between'>
                             <div>
                                 <p className='text-[#5C5C5C] font-[500]'>City</p>
-                                <p className='text-[#B6B6B6]'>{customerDetails.city}</p>
+                                <p className='text-[#B6B6B6]'>{customerDetails?.city}</p>
                             </div>
                             <div>
                                 <p className='text-[#5C5C5C] font-[500]'>State</p>
-                                <p className='text-[#B6B6B6]'>{customerDetails.state}</p>
+                                <p className='text-[#B6B6B6]'>{customerDetails?.state}</p>
                             </div>
                         </div>
                         <div className='my-5'>
@@ -192,9 +192,10 @@ const SingleCustomer = ({baseUrl}) => {
                         </div>
                         <div className='my-5'>
                             <p className='text-[#5C5C5C] font-[500]'>JPG</p>
-                            <div className='flex items-ceter gap-5'>
+                            <div className='grid grid-cols-2 items-ceter gap-5'>
                                 <img onClick={e => setImgView(customerDetails.id_card_image_front_view)} src={customerDetails.id_card_image_front_view} className='w-[100px] h-[100px] object-contain cursor-pointer' alt="" />
                                 <img onClick={e => setImgView(customerDetails.id_card_image_back_view)} src={customerDetails.id_card_image_back_view} className='w-[100px] h-[100px] object-contain cursor-pointer' alt="" />
+                                <img onClick={e => setImgView(customerDetails.photo)} src={customerDetails.photo} className='w-[100px] h-[100px] object-contain cursor-pointer' alt="" />
                             </div>
                         </div>
                     </div>

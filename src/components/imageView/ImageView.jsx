@@ -7,7 +7,7 @@ const ImageView = ({ imgView, setImgView }) => {
         <div className="bg-white md:w-[650px] w-[500px] h-[500px] py-4 rounded-[18px]">
             <MdClose className='block text-[1.5rem] text-end mb-7 mt-[1rem] mr-[1rem] ml-auto cursor-pointer' onClick={() => setImgView(false)}/>
             <div className="flex items-center justify-between mt-[1rem] px-[2rem] mb-[2rem] flex-col">
-                <img src={imgView} alt="" className='w-full m-auto'/>
+                <img src={imgView} alt="" className='w-full h-[400px] object-contain m-auto'/>
             </div>
         </div>
     </div>
