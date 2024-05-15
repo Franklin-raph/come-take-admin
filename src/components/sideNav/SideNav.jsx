@@ -19,24 +19,16 @@ const SideNav = () => {
 
   console.log(location.pathname);
 
-  const isCustomerDetailPage = location.pathname.includes("/customer") || location.pathname === '/';
-
   return (
     <div className='bg-[#003C2F] w-[15%] h-[100dvh] fixed overflow-y-auto'>
       <h1 className='text-white text-[32px] text-center font-[700] my-5'>Admin</h1>
       <ul className='text-white'>
-        <li className={isCustomerDetailPage ? `bg-secondary-color py-3 pl-3` : `py-3 pl-3`}>
+        <li className={location.pathname.includes("/customer") || location.pathname === '/' ? `bg-secondary-color py-3 pl-3` : `py-3 pl-3`}>
           <Link to="/customers" className='flex items-center gap-3'>
             <CiUser fontSize={"22px"}/>
             <p>Customers</p>
           </Link>
         </li>
-        {/* <li className='py-3 pl-3'>
-          <Link to="/notifications" className='flex items-center gap-4'>
-            <PiNotification />
-            <p>Notification</p>
-          </Link>
-        </li> */}
         <li className={location.pathname === "/transactions" ? `bg-secondary-color py-3 pl-3` :`py-3 pl-3`}>
           <Link to="/transactions" className='flex items-center gap-4'>
             <TiDocumentText />
