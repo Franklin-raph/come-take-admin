@@ -25,7 +25,7 @@ const EditSubModal = ({editSubModal, setEditSubModal, getAllSubs}) => {
                 { body: planDescription3 }
             ]
             console.log({title, no_of_product_upload_per_month, price, plan_description});
-            const res = await fetch(`https://api.yamltech.com/administrator/dashboard/subscription-plan/${editSubModal.id}`,{
+            const res = await fetch(`https://cometakebe.onrender.com/administrator/dashboard/subscription-plan/${editSubModal.id}`,{
                 method:"PUT",
                 headers:{
                     Authorization:`Bearer ${admin.data[0].access}`,

@@ -9,7 +9,7 @@ const Transactions = () => {
   const [loading, setLoading] = useState(false)
 
   async function getAllTransactions(){
-    const res = await fetch(`https://api.yamltech.com/administrator/dashboard/transactions`,{
+    const res = await fetch(`https://cometakebe.onrender.com/administrator/dashboard/transactions`,{
       headers:{
         Authorization:`Bearer ${admin.data[0].access}`
       }
