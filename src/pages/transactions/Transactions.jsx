@@ -61,7 +61,7 @@ const Transactions = () => {
                   </tr>
               </thead>
               <tbody>
-                  <tr class="bg-white border-b cursor-pointer">
+                  {/* <tr class="bg-white border-b cursor-pointer">
                       <td class="pl-3 pr-6 py-4">
                         Tosin Olawale
                       </td>
@@ -111,7 +111,7 @@ const Transactions = () => {
                       <td class="px-6 py-4">
                         Credit Card
                       </td>
-                  </tr>
+                  </tr> */}
               </tbody>
           </table>
       </div>

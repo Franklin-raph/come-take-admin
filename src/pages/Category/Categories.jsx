@@ -14,7 +14,7 @@ const Categories = () => {
     const admin = JSON.parse(localStorage.getItem('admin'))
 
     async function getAllCategories(){
-        const res = await fetch(`https://api.yamltech.com/categories`,{
+        const res = await fetch(`https://cometakebe.onrender.com/categories`,{
             headers:{
                 Authorization:`Bearer ${admin.data[0].access}`
             }

@@ -15,7 +15,7 @@ const Subscriptions = () => {
     const [deleteSubModal, setDeleteSubModal] = useState(false)
 
     async function getAllSubs(){
-      const res = await fetch(`https://api.yamltech.com/subscription/plans`,{
+      const res = await fetch(`https://cometakebe.onrender.com/subscription/plans`,{
         headers:{
           Authorization:`Bearer ${admin.data[0].access}`
         }
