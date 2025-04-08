@@ -13,7 +13,8 @@ import Categories from './pages/Category/Categories'
 function App() {
 
   // const baseUrl = 'https://cometake.pythonanywhere.com/administrator'
-  const baseUrl = 'https://cometakebe.onrender.com/administrator'
+  // const baseUrl = 'https://cometakebe.onrender.com/administrator'
+  const baseUrl = 'https://cometakebe-4t5h.onrender.com/administrator'
   const admin = JSON.parse(localStorage.getItem('admin'))
 
   return (

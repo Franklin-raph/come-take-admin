@@ -7,7 +7,7 @@ const DeleteSubModal = ({setDeleteSubModal, deleteSubModal, getAllSubs}) => {
 
     async function deleteSub(){
         setLoading(true)
-        const res =  await fetch(`https://cometakebe.onrender.com/administrator/dashboard/subscription-plan/${deleteSubModal}`,{
+        const res =  await fetch(`https://cometakebe-4t5h.onrender.com/administrator/dashboard/subscription-plan/${deleteSubModal}`,{
             method:"DELETE",
             headers:{
                 Authorization:`Bearer ${admin.data[0].access}`

@@ -10,7 +10,7 @@ const Transactions = () => {
   const [searchString, setSearchString] = useState('');
 
   async function getAllTransactions(){
-    const res = await fetch(`https://cometakebe.onrender.com/administrator/dashboard/transactions`,{
+    const res = await fetch(`https://cometakebe-4t5h.onrender.com/administrator/dashboard/transactions`,{
       headers:{
         Authorization:`Bearer ${admin.data[0].access}`
       }

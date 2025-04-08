@@ -9,7 +9,7 @@ const EditCategoryModal = ({setEditCategoryModal, getAllCategories, editCategory
 
     async function updateCategory(){
         setLoading(true)
-        const res = await fetch(`https://cometakebe.onrender.com/administrator/dashboard/category/${editCategoryModal.id}`,{
+        const res = await fetch(`https://cometakebe-4t5h.onrender.com/administrator/dashboard/category/${editCategoryModal.id}`,{
             method:"PUT",
             headers:{
                 Authorization:`Bearer ${admin.data[0].access}`,

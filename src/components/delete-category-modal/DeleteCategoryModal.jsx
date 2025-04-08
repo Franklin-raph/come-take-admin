@@ -7,7 +7,7 @@ const DeleteCategoryModal = ({setDeleteCategoryModal, getAllCategories, deleteCa
 
     async function deleteCategory(){
         setLoading(true)
-        const res =  await fetch(`https://cometakebe.onrender.com/administrator/dashboard/category/${deleteCategoryModal}`,{
+        const res =  await fetch(`https://cometakebe-4t5h.onrender.com/administrator/dashboard/category/${deleteCategoryModal}`,{
             method:"DELETE",
             headers:{
                 Authorization:`Bearer ${admin.data[0].access}`
