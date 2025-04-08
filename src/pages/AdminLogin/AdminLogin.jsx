@@ -16,7 +16,7 @@ const AdminLogin = ({baseUrl}) => {
         alert('Please fill in the fields')
       }else{
           setLoading(true)
-          const res = await fetch(`https://cometakebe.onrender.com/login`, {
+          const res = await fetch(`https://cometakebe-4t5h.onrender.com/login`, {
             method:"POST",
             headers: {
               "Content-Type":"application/json"
