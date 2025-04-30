@@ -10,11 +10,13 @@ const Transactions = () => {
   const [searchString, setSearchString] = useState('');
 
   async function getAllTransactions(){
+    setLoading(true)
     const res = await fetch(`https://cometakebe-4t5h.onrender.com/administrator/dashboard/transactions`,{
       headers:{
         Authorization:`Bearer ${admin.data[0].access}`
       }
     })
+    if(res) setLoading(false)
     const data = await res.json()
     setAllTransactions(data.data)
     console.log(data)
@@ -40,110 +42,76 @@ const Transactions = () => {
           <input onChange={e => setSearchString(e.target.value)} className='border outline-none border-[#C8C8C8] px-2 py-[6px] mt-[6px] rounded text-[14px]' type="text" placeholder='Customer Name' />
         </div>
       </div>
-      <div class="relative overflow-x-auto sm:rounded-lg mt-9">
-          <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead class="text-[14px] text-[#5C5C5C] capitalize border-b">
-                  <tr>
-                      <th scope="col" class="pl-3 pr-6 py-3">
-                          Customers
-                      </th>
-                      <th scope="col" class="px-6 py-3">
-                          Date
-                      </th>
-                      <th scope="col" class="px-6 py-3">
-                          Amount
-                      </th>
-                      <th scope="col" class="px-6 py-3">
-                          Transaction Type
-                      </th>
-                      <th scope="col" class="px-6 py-3">
-                          Transaction Description
-                      </th>
-                      <th scope="col" class="px-6 py-3">
-                          Balance
-                      </th>
-                  </tr>
-              </thead>
-              <tbody>
-                {
-                  allTransactions.filter(transaction => transaction?.wallet?.user?.first_name.toLowerCase().includes(searchString.toLowerCase()) || transaction?.wallet?.user?.last_name.toLowerCase().includes(searchString.toLowerCase()))
-                  .map(transaction => (
-
-                    <tr class="bg-white border-b cursor-pointer">
-                        <td class="pl-3 pr-6 py-4">
-                          {transaction?.wallet?.user?.first_name} {transaction?.wallet?.user?.last_name}
-                        </td>
-                        <td class="px-6 py-4">
-                          {new Date(transaction.created_at).toLocaleDateString()}
-                        </td>
-                        <td class='px-6 py-4 capitalize'>
-                          #{transaction.amount.toLocaleString()}
-                        </td>
-                        <td class='px-6 py-4 capitalize'>
-                          <span class={` py-1 px-6 rounded-full text-gray-100 ${transaction.transaction_type === 'debit' ? 'bg-red-300' : 'bg-green-300'}`}>{transaction.transaction_type}</span>
-                        </td>
-                        <td class="px-6 py-4 capitalize">
-                          {transaction.description}
-                        </td>
-                        <td class="px-6 py-4">
-                          #{transaction?.wallet?.balance?.toLocaleString()}
-                        </td>
+      <div className="relative overflow-x-auto sm:rounded-lg mt-9">
+          {loading ? (
+            <div className='flex justify-center items-center py-20 w-full'>
+              <svg className="animate-spin -ml-1 mr-3 h-8 w-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+              </svg>
+              <p className='text-[#333333] text-[16px] font-[500]'>Loading...</p>
+            </div>
+          ) : allTransactions.length === 0 ? (
+            <div className='flex flex-col justify-center items-center py-20 w-full'>
+              <svg className="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <p className='text-[#333333] text-[18px] font-[500]'>No transactions available</p>
+            </div>
+          ) : (
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead className="text-[14px] text-[#5C5C5C] capitalize border-b">
+                    <tr>
+                        <th scope="col" className="pl-3 pr-6 py-3">
+                            Customers
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Date
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Amount
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Transaction Type
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Transaction Description
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Balance
+                        </th>
                     </tr>
-                  ))
-                }
-                  {/* <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-green-300 py-1 px-6 text-green-700 rounded-full'>Confirmed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr>
-                  <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-green-300 py-1 px-6 text-green-700 rounded-full'>Confirmed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr>
-                  <tr class="bg-white border-b cursor-pointer">
-                      <td class="pl-3 pr-6 py-4">
-                        Tosin Olawale
-                      </td>
-                      <td class="px-6 py-4">
-                        <span className='bg-red-500 py-1 px-6 text-red-900 rounded-full'>Failed</span>
-                      </td>
-                      <td class="px-6 py-4">
-                        11/10/2023
-                      </td>
-                      <td class='px-6 py-4 capitalize'>
-                        N10,000
-                      </td>
-                      <td class="px-6 py-4">
-                        Credit Card
-                      </td>
-                  </tr> */}
-              </tbody>
-          </table>
+                </thead>
+                <tbody>
+                  {
+                    allTransactions.filter(transaction => transaction?.wallet?.user?.first_name.toLowerCase().includes(searchString.toLowerCase()) || transaction?.wallet?.user?.last_name.toLowerCase().includes(searchString.toLowerCase()))
+                    .map(transaction => (
+
+                      <tr className="bg-white border-b cursor-pointer" key={transaction.id || transaction._id}>
+                          <td className="pl-3 pr-6 py-4">
+                            {transaction?.wallet?.user?.first_name} {transaction?.wallet?.user?.last_name}
+                          </td>
+                          <td className="px-6 py-4">
+                            {new Date(transaction.created_at).toLocaleDateString()}
+                          </td>
+                          <td className='px-6 py-4 capitalize'>
+                            #{transaction.amount.toLocaleString()}
+                          </td>
+                          <td className='px-6 py-4 capitalize'>
+                            <span className={`py-1 px-6 rounded-full text-gray-100 ${transaction.transaction_type === 'debit' ? 'bg-red-300' : 'bg-green-300'}`}>{transaction.transaction_type}</span>
+                          </td>
+                          <td className="px-6 py-4 capitalize">
+                            {transaction.description}
+                          </td>
+                          <td className="px-6 py-4">
+                            #{transaction?.wallet?.balance?.toLocaleString()}
+                          </td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+            </table>
+          )}
       </div>
     </div>
   )
