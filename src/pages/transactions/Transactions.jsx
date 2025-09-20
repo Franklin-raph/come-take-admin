@@ -18,7 +18,33 @@ const Transactions = () => {
     })
     if(res) setLoading(false)
     const data = await res.json()
-    setAllTransactions(data.data)
+    setAllTransactions(data)
+    console.log(data)
+  }
+
+  async function callNextPage(url){
+    setLoading(true)
+    const res = await fetch(url,{
+      headers:{
+        Authorization:`Bearer ${admin.data[0].access}`
+      }
+    })
+    if(res) setLoading(false)
+    const data = await res.json()
+    setAllTransactions(data)
+    console.log(data)
+  }
+
+  async function callPrevPage(url){
+    setLoading(true)
+    const res = await fetch(url,{
+      headers:{
+        Authorization:`Bearer ${admin.data[0].access}`
+      }
+    })
+    if(res) setLoading(false)
+    const data = await res.json()
+    setAllTransactions(data)
     console.log(data)
   }
 
@@ -84,7 +110,7 @@ const Transactions = () => {
                 </thead>
                 <tbody>
                   {
-                    allTransactions.filter(transaction => transaction?.wallet?.user?.first_name.toLowerCase().includes(searchString.toLowerCase()) || transaction?.wallet?.user?.last_name.toLowerCase().includes(searchString.toLowerCase()))
+                    allTransactions.data.filter(transaction => transaction?.wallet?.user?.first_name.toLowerCase().includes(searchString.toLowerCase()) || transaction?.wallet?.user?.last_name.toLowerCase().includes(searchString.toLowerCase()))
                     .map(transaction => (
 
                       <tr className="bg-white border-b cursor-pointer" key={transaction.id || transaction._id}>
@@ -112,6 +138,11 @@ const Transactions = () => {
                 </tbody>
             </table>
           )}
+      </div>
+      <div className='flex justify-end items-center gap-6 mt-6'>
+        <button onClick={() => callPrevPage(allTransactions.previous)} className='bg-gray-300 px-3 py-1 text-gray-700 rounded-[3px] text-[14px]'>Prev</button>
+        <p>Page {allTransactions?.current_page} of {allTransactions?.total_pages}</p>
+        <button onClick={() => callNextPage(allTransactions.next)} className='bg-gray-300 px-3 py-1 text-gray-700 rounded-[3px] text-[14px]'>Next</button>
       </div>
     </div>
   )
